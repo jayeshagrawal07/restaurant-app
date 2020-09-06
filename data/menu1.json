@@ -1,0 +1,504 @@
+{
+    "Chinese & Snacks": [{
+            "name": "Chinese Bhel",
+            "image": "image/chinese-bhel.png",
+            "price": "₹100",
+            "id": "chinese-&-snacks-1"
+        },
+        {
+            "name": "Veg  Manchurian (gravy)",
+            "image": "image/veg-manchurian-gravy.png",
+            "price": "₹80"
+        },
+        {
+            "name": "Veg Manchurian (dry) ",
+            "image": "image/veg-manchurian-dry.png",
+            "price": "₹100"
+        },
+        {
+            "name": "Noodles",
+            "image": "image/noodles.png",
+            "price": "₹70"
+        },
+        {
+            "name": "Fried Rice",
+            "image": "image/fried-rice.png",
+            "price": "₹80"
+        },
+        {
+            "name": "Hakka Noodles",
+            "image": "image/hakka-noodles.png",
+            "price": "₹120"
+        },
+        {
+            "name": "Crispi Corn",
+            "image": "image/crispi-corn.png",
+            "price": "₹140"
+        },
+        {
+            "name": "Finger Chips",
+            "image": "image/finger-chips.png",
+            "price": "₹110"
+        }
+
+    ],
+    "Starters": [{
+            "name": "Spring roll",
+            "description": "These Vegetable Spring Rolls include fresh mango and are paired with a nut butter dipping sauce, sure to heighten the senses.",
+            "image": "image/spring-roll.png",
+            "price": "₹145"
+        },
+        {
+            "name": "Chilli paneer",
+            "description": "Chilli Paneer is a delicious Indo Chinese recipe where Paneer or Indian cottage cheese is batter fried and then tossed in a spicy sauce mixture.",
+            "image": "image/chilli-paneer.png",
+            "price": "₹195"
+        },
+
+        {
+            "name": "Hara-bhara kabab",
+            "description": "Hara bhara kabab are pan-fried spiced patties made with a mix of spinach, green peas and potatoes. The recipe is easy to make and healthy as well – since it has the best of both spinach and green peas",
+            "image": "image/hara-bhara-kabab.png",
+            "price": "₹162"
+        },
+        {
+            "name": "Veg lollipop",
+            "description": "Vegetable lollipop are crispy fried balls made with mix vegetable filling. veg lollipops make for a tasty vegetarian appetizer or a starter snack at get together and parties",
+            "image": "image/veg-lollipop.png",
+            "price": "₹180"
+        },
+        {
+            "name": "French Fries",
+            "description": "French fries are long, thin pieces of potato fried in oil or fat. The French fries were thin and crispy.",
+            "image": "image/french-fries.png",
+            "price": "₹110"
+        },
+        {
+            "name": "Garlic bread",
+            "description": "Garlic bread consists of bread topped with garlic and olive oil or butter and may include additional herbs, such as oregano or chives. It is then either grilled or broiled until toasted or baked in a conventional or bread oven.",
+            "image": "image/garlic-bread.png",
+            "price": "₹100"
+        }
+
+    ],
+    "Paneer Main Course": [{
+            "name": "Paneer Pudina",
+            "description": "Pudina paneer gravy with dried mint, not the green gravy version",
+            "image": "image/paneer-pudina.png",
+            "price": "₹180"
+        },
+        {
+            "name": "Paneer Punjabi",
+            "description": "Paneer or cottage cheese is a fresh cheese made by coagulating milk and separating the whey. It is used widely in Indian, oriental, continental and other cuisines because of its soft mouth-feel and versatility.",
+            "image": "image/paneer-punjabi.png",
+            "price": "₹170"
+        },
+        {
+            "name": "Paneer Kolhapuri",
+            "description": "a spicy dish from maharastrian or specifically from kolhapur region prepared with paneer and dry kolhapur masala. the masala is mixture of dry spices with red chillies and dry coconut ",
+            "image": "image/paneer-kolhapuri.png",
+            "price": "₹190"
+        },
+        {
+            "name": "Panner Mirchi",
+            "description": "A fragrant curry brightened with black pepper. A favourite at dinner parties ",
+            "image": "image/paneer-mirchi.png",
+            "price": "₹175"
+        },
+        {
+            "name": "Paneer Mastana",
+            "description": "Soft Paneer cubes were marinated in yogurt cream & a white sauce. The subtle flavor of garlic was noticeable. It was served with a spicy green chutney made from coriander, mint & chilies.",
+            "image": "image/paneer-mastana.png",
+            "price": "₹200"
+        },
+        {
+            "name": "Shahi Paneer",
+            "description": "Shahi Paneer is a delicious North Indian curry made with Paneer (cottage cheese) and tomato based spicy gravy laced with Indian curry spices.",
+            "image": "image/shahi-paneer.png",
+            "price": "₹210"
+        },
+
+
+        {
+            "name": "Kadhai Paneer",
+            "description": "Kadai Paneer is a popular paneer recipe where paneer and bell peppers are cooked in a spicy masala. It is one of the most popular paneer recipes.",
+            "image": "image/kadhai-paneer.png",
+            "price": "₹210"
+        },
+
+        {
+            "name": "Butter Paneer Masala",
+            "description": " it is a rich & creamy curry made with paneer, spices, onions, tomatoes, cashews and butter. It is one of the most popular dishes in Indian restaurants ",
+            "image": "image/butter-paneer-masala.png",
+            "price": "₹210"
+        },
+        {
+            "name": "Matar Paneer",
+            "description": "Matar Paneer is a popular Indian curry dish made with green peas and cottage cheese from the North Indian cuisine. Garnish with chopped coriander leaves.",
+            "image": "image/matar-paneer.png",
+            "price": "₹210"
+        },
+        {
+            "name": "Palak Paneer",
+            "description": "Palak Paneer is a popular Indian dish of soft cottage cheese cubes in a mild, spiced smooth spinach sauce. This delicious creamy dish is made with fresh spinach leaves, paneer (cottage cheese), onions, herbs and spices.",
+            "image": "image/palak-paneer.png",
+            "price": "₹169"
+        },
+        {
+            "name": "Paneer Do Pyaza",
+            "description": "Restaurant style paneer do pyaza: Originally this is Mughlai dish where gravy is rich, creamy and no tomatoes are added",
+            "image": "image/panner-do-pyaza.png",
+            "price": "₹183"
+        }
+    ],
+    "Veg Main Course": [{
+            "name": "Palak Plain",
+            "description": "Palak Paneer, a popular Restaurant style Punjabi Curry is prepared by cooking ... serving tasty Punjabi palak paneer gravy with various Indian breads",
+            "image": "image/palak-plain.png",
+            "price": "₹146"
+        },
+        {
+            "name": "Aloo Palak",
+            "description": "Aloo Palak is North Indian side dish. Dhaba Style Aloo Palak is very healthy green curry. Dhaba Style Aloo Palak is spicy spinach potato curry.",
+            "image": "image/aloo-palak.png",
+            "price": "₹150"
+        },
+        {
+            "name": "Aloo Gobi",
+            "description": "Aloo gobi is a vegetarian dish from the Indian subcontinent made with potatoes (aloo), cauliflower (gob(h)i), and Indian spices",
+            "image": "image/aloo-gobi.png",
+            "price": "₹152"
+        },
+        {
+            "name": "Aloo Jeera",
+            "description": "Jeera aloo is basically a stir-fry potato dish where boiled potatoes are tossed in a spice blend which is majorly dominated by cumin or jeera.",
+            "image": "image/aloo-jeera.png",
+            "price": "₹156"
+        },
+        {
+            "name": "Veg Kofta",
+            "description": "malai kofta recipe, the kofta are made with paneer and potatoes. They are crisp as well as melt in the mouth.",
+            "image": "image/veg-kofta.png",
+            "price": "₹183"
+        },
+        {
+            "name": "Malai Kofta",
+            "description": "Malai Kofta is a very popular Indian vegetarian dish where balls (kofta) made of potato and paneer are deep fried and served with a creamy and spiced tomato based curry. ",
+            "image": "image/malai-kofta.png",
+            "price": "₹183"
+        }
+    ],
+    "Dal Main Course": [{
+            "name": "Dal Makhani",
+            "description": "Dal Makhani is a classic north Indian dish where the lentils are slowly simmered for hours in a very aromatic buttery, creamy tomato sauce.",
+            "image": "image/dal-makhani.png",
+            "price": "₹192"
+        },
+        {
+            "name": "Yellow Dal",
+            "description": "A simple, healthy split yellow lentil (daal) recipe prepared with aromatics, seasoned with tomatoes and garlic, and flavored with spiced oil known as Tadka.",
+            "image": "image/yellow-dal.png",
+            "price": "₹141"
+        },
+        {
+            "name": "Special Dal Butter",
+            "description": "These are not only popular on the restaurant menus but also in most North ... So this is an amazing dish to make for a weekend or special festive meal.",
+            "image": "image/special-dal-butter.png",
+            "price": "₹135"
+        },
+        {
+            "name": "Dal Fry",
+            "description": "Dal fry recipe with stovetop & Instant pot options. This dal fry is a basic Indian dish made by cooking lentils with spices",
+            "image": "image/dal-fry.png",
+            "price": "₹135"
+        }
+    ],
+    "Breads": [{
+            "name": "Breads",
+            "description": "Indian bread are a wide variety of flatbreads and crêpes which are an integral part of Indian cuisine.",
+            "image": "image/breads.png",
+            "price": "₹30"
+        },
+        {
+            "name": "Butter Roti",
+            "description": "Indian bread is the natural choice to accompany a curry, and you’ll be able to use it to mop up all that tasty gravy!",
+            "image": "image/butter-roti.png",
+            "price": "₹20"
+        },
+        {
+            "name": "Tawa Roti",
+            "description": "The roti is a traditional flatbread from the Indian subcontinent. It is normally eaten with cooked vegetables or curries;",
+            "image": "image/tawa=roti.png",
+            "price": "₹17"
+        },
+        {
+            "name": "Plain Naan",
+            "description": "One of the most popular Indian breads is Naan, a soft and chewy flat bread that makes the perfect accompaniment to any saucy dish.",
+            "image": "image/plain-naan.png",
+            "price": "₹30"
+        },
+        {
+            "name": "Butter Naan",
+            "description": "Plain Naan bread rubbed with butter.",
+            "image": "image/butter-naan.png",
+            "price": "₹45"
+        },
+        {
+            "name": "Garlic Naan Butter",
+            "description": "Add some grated garlic to the dough and then brush the naan with lots of garlic butter.",
+            "image": "image/garlic-naan-butter.png",
+            "price": "₹60"
+        },
+        {
+            "name": "Tawa Paratha",
+            "description": "Plain Parathas also known as Tawa Paratha are crisper and flakier version of phulka's",
+            "image": "image/tawa-paratha.png",
+            "price": "₹20"
+        },
+        {
+            "name": "Laccha Paratha",
+            "description": "lachha paratha is traditionally made with whole wheat flour or atta.",
+            "image": "image/laccha-paratha.png",
+            "price": "₹25"
+        },
+        {
+            "name": "Stuffed Kulcha(Aloo)",
+            "description": "aloo kulcha are crisp as well as soft leavened flatbreads stuffed with a spiced potato stuffing",
+            "image": "image/aloo-kulcha.png",
+            "price": "₹35"
+        },
+        {
+            "name": "Stuffed Kulcha (Paneer)",
+            "description": "paneer stuffed kulcha. ... generally, kulcha's are served during breakfast or lunch as a flat bread with the choice of punjabi curries.",
+            "image": "image/panner-kulcha.png",
+            "price": "₹45"
+        },
+        {
+            "name": "Stuffed Kulcha (Onion)",
+            "description": "Whole Wheat Onion Kulcha Recipe is a traditional and simple recipe, that is flavored with a delicious onion and mint stuffing.",
+            "image": "image/onion-kulcha.png",
+            "price": "₹40"
+        }
+    ],
+    "Rice & Biryanis": [{
+            "name": "Steam Rice",
+            "description": "Raw rice soaked in water and then treated with hot steam under pressure. After that the grain is dried and polished",
+            "image": "image/steam-rice.png",
+            "price": "₹100"
+        },
+        {
+            "name": "Jeera Rice",
+            "description": "Jeera rice is a flavored Indian rice dish made by cooking basmati rice with ghee, cumin & other fragrant spices. ",
+            "image": "image/jeera-rice.png",
+            "price": "₹150"
+        },
+        {
+            "name": "Veg Pulao",
+            "description": "Vegetable Pulao (Veg Pulav) is a spicy rice dish prepared by cooking rice with various vegetables and spices",
+            "image": "image/veg-pulao.png",
+            "price": "₹161"
+        },
+        {
+            "name": "Mix. Veg Pulao",
+            "description": "Vegetable Pulao (Veg Pulav) is a spicy rice dish prepared by cooking rice with various vegetables and spices. In this recipe, assortment of spices, veggies and rice",
+            "image": "image/mix-veg-pulao.png",
+            "price": "₹170"
+        },
+        {
+            "name": "Hyderabadi Veg Pulao",
+            "description": "hyderabadi veg pulav recipe. ... an easy and flavoured royal recipe made with basmati rice, vegetables and lot of dry fruits and raisins..",
+            "image": "image/hyderabadi-veg-pulao.png",
+            "price": "₹200"
+        },
+        {
+            "name": "Shahi Pulao",
+            "description": "Shahi pulao is the great delicacy of rice recipes made with basmati rice, tasty veggies, paneer and the shahi masala powder",
+            "image": "image/shahi-pulao.png",
+            "price": "₹102"
+        }
+    ],
+    "Salad & Raita": [{
+            "name": "Onion Salad",
+            "description": "This North Indian Onion Salad is a raw onion recipe that can either be made with red, white, or sweet onions",
+            "image": "image/onion-salad.png",
+            "price": "₹27"
+        },
+        {
+            "name": "Green Salad",
+            "description": "Mixed greens, avocado, tomatoes, our black bean salad, shredded cheese, tortilla strips, Southwest ranch dressing. Mixed greens, tomatoes, red onions, carrots, cucumbers, shredded cheese, croutons. ",
+            "image": "image/green-salad.png",
+            "price": "₹41"
+        },
+        {
+            "name": "Papad Fry",
+            "description": " Masala Papad is a North Indian snack which is made with the popular Papad that is either roasted or fried",
+            "image": "image/papad-fry.png",
+            "price": "₹61"
+        },
+        {
+            "name": "Papad Fry Masala",
+            "description": "Papad it is topped with a spicy and tangy mixture of onions, tomatoes, green chillies, coriander leaves, salt, chaat masala powder, red chilli powder and lemon juice.",
+            "image": "image/papad-fry-masala.png",
+            "price": "₹34"
+        },
+        {
+            "name": "Plain raita",
+            "description": "Raita is a delicious Indian side that has a cooling effect.",
+            "image": "image/plain-raita.png",
+            "price": "₹102"
+        },
+        {
+            "name": "Boondi Raita",
+            "description": "Boondi Raita is a healthy and delicious accompaniment made with yogurt and small fried balls made of chickpea flour",
+            "image": "image/boondi-raita.png",
+            "price": "₹102"
+        },
+        {
+            "name": "Fruit Raita",
+            "description": "Fruit Raita Recipe is a healthy and yummy dip prepared by mixing curd and diced fresh fruits like apple, pineapple, pomegranate, banana, strawberry etc.",
+            "image": "image/fruit-raita.png",
+            "price": "₹122"
+        },
+        {
+            "name": "Pineapple Raita",
+            "description": "Pineapple Raita is made from pineapple, curds, sugar and jeera.",
+            "image": "image-pineapple-raita.png",
+            "price": "₹122"
+        },
+        {
+            "name": "Veg Raita",
+            "description": "One of the scrumptious summer raita recipe is 'Vegetable Raita'. Made with the goodness of yogurt, cucumber, tomatoes, onions etc.",
+            "image": "image/veg-raita.png",
+            "price": "₹115"
+        }
+    ],
+    "Desserts & Sweets": [{
+            "name": "Gulab Jamun",
+            "image": "image/gulab-jamun.png",
+            "price": "₹100"
+        },
+        {
+            "name": "Rasgulla",
+            "image": "image/rasgulla.png",
+            "price": "₹100"
+        },
+        {
+            "name": "Rabdi",
+            "image": "image/rabdi.png",
+            "price": "₹200"
+        },
+        {
+            "name": "Gajar Halwa",
+            "image": "image/gajar-halwa.png",
+            "price": "₹250"
+        },
+        {
+            "name": "Besan chakki",
+            "image": "image/besan-chakki.png",
+            "price": "₹150"
+        },
+        {
+            "name": "Milk Cake",
+            "image": "image/milk-cake.png",
+            "price": "₹100"
+        },
+        {
+            "name": "Kaju katli",
+            "image": "image/kaju-katli.png",
+            "price": "₹210"
+        },
+        {
+            "name": "Mix Bites",
+            "image": "image/mix-bites.png",
+            "price": "₹238"
+        },
+        {
+            "name": "Besan Ladoo",
+            "image": "image/besan-ladoo.png",
+            "price": "₹100"
+        },
+        {
+            "name": "Kesar Kaju Cake",
+            "image": "image/kesar-kaju-cake.png",
+            "price": "₹228"
+        },
+        {
+            "name": "Strawberry Dryfruits Crunch",
+            "image": "image/strawberry-dryfruits-crunch.png",
+            "price": "₹223"
+        }
+    ],
+    "Beverages": [{
+            "name": "Cola / Lemon / Orange",
+            "image": "image/cola-lemon-orange.png",
+            "price": "₹50"
+        },
+        {
+            "name": "Fresh Lime Soda Sweet / Salt",
+            "image": "image/fresh-lime-soda.png",
+            "price": "₹30"
+        },
+        {
+            "name": "Mineral Water",
+            "image": "image/mineral-water.png",
+            "price": "₹25"
+        },
+        {
+            "name": "Fresh Lime Water Sweet / Salt",
+            "image": "image/fresh-lime-water.png",
+            "price": "₹30"
+        }
+    ],
+    "Tea & coffee": [{
+            "name": " Tea",
+            "image": "image/tea.png",
+            "price": "₹30"
+        },
+        {
+            "name": "Coffee Mocachino",
+            "image": "image/coffee-mocachino.png",
+            "price": "₹51"
+        },
+        {
+            "name": "Coffee Americano (Black)",
+            "image": "image/coffee-americano.png",
+            "price": "₹55"
+        },
+        {
+            "name": "Coffee Espresso",
+            "image": "image/coffee-espresso.png",
+            "price": "₹60"
+        },
+        {
+            "name": "Coffee Cappuccino",
+            "image": "image/coffee-cappuccino.png",
+            "price": "₹55"
+        },
+        {
+            "name": "Espresso (Black)",
+            "image": "image/espresso.png",
+            "price": "₹55"
+        },
+        {
+            "name": "Cold-Coffee (Frappe)",
+            "image": "image/cold-coffe.png",
+            "price": "₹70"
+        },
+        {
+            "name": "Ice-Tea (Lemon)",
+            "image": "image/ice-tea.png",
+            "price": "₹51"
+        }
+    ],
+    "category": [
+        "Paneer Main Course",
+        "Veg Main Course",
+        "Dal Main Course",
+        "Breads",
+        "Rice & Biryanis",
+        "Salad & Raita",
+        "Desserts & Sweets",
+        "Beverages",
+        "Tea & coffee"
+    ]
+}

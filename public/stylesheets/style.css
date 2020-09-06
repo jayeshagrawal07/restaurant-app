@@ -1,0 +1,161 @@
+body {
+  overflow: hidden;
+}
+
+.col {
+  padding: 0;
+}
+
+/* .category-section {
+  
+} */
+
+/* nav style start */
+/* change the background color */
+.nav {
+  background-color: #ffffff;
+}
+
+/* change the brand and text color */
+.nav .navbar-brand,
+.nav .navbar-text {
+  color: #F827F6;
+  padding: 0.8rem 1rem;
+}
+
+/* change the link color and add padding for height */
+.nav .nav-item .nav-link {
+  color: red;
+}
+
+/* change the color of active or hovered links */
+.nav .nav-item .nav-link.active,
+.nav .nav-item:hover:focus:active .nav-link {
+  color: #ffffff;
+  background: linear-gradient(to top, #33ccff 0%, #ff99cc 100%);
+}
+
+/* nav style end */
+
+ul.nav-pills {
+  top: 1px;
+  width: 24.95vw;
+  position: fixed;
+  height: 90vh;
+  align-items: center;
+  overflow-y: auto;
+}
+
+
+ul li {
+  width: 100%;
+  text-align: center;
+}
+
+.dish-card {
+  font-size: 1.8vw;
+  font-weight: 500;
+  width: 100%;
+  text-align: left;
+}
+
+.dish-title {
+  display: inline-block;
+}
+
+.price {
+  float: right;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-body p {
+  margin-top: .45rem;
+  line-height: 1.2;
+}
+
+.section-heading {
+  padding: 5px 15px;
+  margin: 0;
+  background-color: coral;
+}
+
+
+/* cart style */
+.cart-dish-card-header {
+  font-size: 1.3vw;
+  font-weight: 500;
+  width: 100%;
+  text-align: left;
+}
+
+.cart-dish-title {
+  display: inline-block;
+}
+
+.cart-price {
+  float: right;
+}
+
+.cart-qty {
+  font-size: .9vw;
+  margin-bottom: .45rem;
+}
+
+.cart-total-qty p,
+.cart-total p,
+.cart-grand-total p {
+  margin-bottom: .2rem;
+  text-align: center;
+  font-size: 1.1vw;
+}
+
+.cart-total-qty h6,
+.cart-total h6,
+.cart-grand-total h6 {
+  text-align: center;
+  font-size: 1.7vw;
+  margin-bottom: .3rem;
+}
+
+.cart-grand-total h6 {
+  text-align: right;
+  margin-right: .2rem;
+}
+
+.cart-grand-total h6 span {
+  font-size: .8vw;
+}
+
+.ordered-dish-card {
+  font-size: 1.159vw;
+  font-weight: 500;
+  width: 100%;
+  text-align: left;
+}
+
+.ordered-qty {
+  font-weight: 300;
+  color: white;
+  background: gray;
+  padding: 0 .25rem;
+}
+
+.checkout-section {
+  padding: 0 1vh 1vh;
+  text-align: left;
+}
+
+.checkout-section-title {
+  display: inline-block;
+  font-size: .9rem;
+  font-weight: 400;
+}
+
+.checkout-section-content {
+  float: right;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
