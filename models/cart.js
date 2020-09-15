@@ -1,4 +1,5 @@
 module.exports = function Cart(cart) {
+    this.table = cart.table || null;
     this.dishes = cart.dishes || {};
     this.cartTotalDishes = cart.cartTotalDishes || 0;
     this.cartTotalPrice = cart.cartTotalPrice || 0;

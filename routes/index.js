@@ -6,19 +6,18 @@ var Cart = require('../models/cart');
 
 var menu = JSON.parse(fs.readFileSync('./data/menu.json', 'utf8'));
 
-router.get('/favicon.ico', (req,res)=>{
+router.get('/favicon.ico', (req, res) => {
   return 'your faveicon'
- })
+})
 
 router.get('/:table', function (req, res, next) {
-  console.log(req.params.table);
-  req.session.table = req.params.table;
-  console.log(req.session.table);
-  console.log(req.sessionID);
+  if(!req.session.table){req.session.table = req.params.table;}
+  if(!req.session.activeCategory){req.session.activeCategory = "";}
   if (!req.session.cart) {
     return res.render('menu', {
       title: 'Menu',
       menu,
+      activeCategory: req.session.activeCategory,
       cartDishes: null,
       cartTotalprice: 0,
       cartTotalqty: 0,
@@ -34,6 +33,7 @@ router.get('/:table', function (req, res, next) {
   res.render('menu', {
     title: 'Menu',
     menu,
+    activeCategory: req.session.activeCategory,
     cartDishes: cart.getDishes(),
     cartTotalprice: cart.cartTotalPrice,
     cartTotalqty: cart.cartTotalDishes,
@@ -46,17 +46,18 @@ router.get('/:table', function (req, res, next) {
 });
 
 router.post('/add', function (req, res, next) {
-  console.log(`add ${req.session.table}`);
   var categoryId = req.body.category;
   var dishId = req.body.id;
   var qty = parseInt(req.body.qty);
   var cart = new Cart(req.session.cart ? req.session.cart : {});
+  if(!cart.table){cart.table = req.session.table;}
   var dish = menu[categoryId].filter(function (dishItem) {
     return dishItem.id === dishId;
   });
   cart.add(dish[0], qty, dishId);
   req.session.cart = cart;
-  res.redirect(`/${req.session.table}#${categoryId}`);
+  req.session.activeCategory = dishId;
+  res.redirect(`/${cart.table}`);
 });
 
 router.get('/remove/:id', function (req, res, next) {
@@ -64,7 +65,8 @@ router.get('/remove/:id', function (req, res, next) {
   var cart = new Cart(req.session.cart ? req.session.cart : {});
   cart.removeAll(dishId);
   req.session.cart = cart;
-  res.redirect('/');
+  req.session.activeCategory = dishId;
+  res.redirect(`/${cart.table}`);
 });
 
 router.post('/remove', function (req, res, next) {
@@ -73,16 +75,18 @@ router.post('/remove', function (req, res, next) {
   var cart = new Cart(req.session.cart ? req.session.cart : {});
   cart.remove(dishId, qty);
   req.session.cart = cart;
-  res.redirect('/');
+  req.session.activeCategory = dishId;
+  res.redirect(`/${cart.table}`);
 });
 
-router.get('/order', function (req, res, next) {
+router.get('/place/order', function (req, res, next) {
   var cart = new Cart(req.session.cart ? req.session.cart : {});
   if (cart.getDishes()) {
     cart.order();
   }
   req.session.cart = cart;
-  res.redirect('/');
+  req.session.activeCategory = "";
+  res.redirect(`/${cart.table}`);
 });
 
 module.exports = router;

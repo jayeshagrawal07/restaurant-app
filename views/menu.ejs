@@ -1,7 +1,7 @@
 <%- include('partials/header'); -%>
 <div class="container-fluid">
     <div class="row">
-        <div class="col col-sm-9 col-9" data-spy="scroll" data-target="#myScrollspy" data-offset="1"
+        <div class="col col-sm-9 col-9" data-spy="scroll" data-target="#myScrollspy"
             style="position: relative;overflow-y: scroll;height: 100vh;">
             <div class="container-fluid">
                 <div class="row">
@@ -9,15 +9,9 @@
                         <ul class="nav nav-pills nav-stacked" id="myScrollspy">
                             <h2 class="text-center" style="width: 100%;">Category</h2>
                             <%menu.category.forEach( function(category,i) {%>
-                            <% if(i==0){%>
-                            <li class="nav-item">
-                                <a class="nav-link active" href="#<%= category.id %>"><%= category.name %></a>
-                            </li>
-                            <%}else{%>
                             <li class="nav-item">
                                 <a class="nav-link" href="#<%= category.id %>"><%= category.name %></a>
                             </li>
-                            <%}%>
                             <%});%>
                         </ul>
                     </div>
@@ -30,6 +24,8 @@
                                 <%if(dishCategory){%>
                                 <%dishCategory.forEach((dish) => {%>
                                 <div class="card mt-3">
+                                    <span id="<%= dish.id%>" style="position: relative;
+                                    top: -6vh;"></span>
                                     <div class="row no-gutters">
                                         <div class="col-md-4 bg-secondary">
                                             <!-- <img src="" class="card-img" alt=""> -->
@@ -69,7 +65,8 @@
                 <div class="col col-sm-3 col-3">
                     <% var a = orderedDishes?[80,0]:[100,.4]%>
 
-                    <div class="container-fluid" style="padding: 0 .3rem <%=a[1]%>rem;height: <%=a[0]%>vh;overflow-y: auto;overflow-x: hidden;">
+                    <div class="container-fluid"
+                        style="padding: 0 .3rem <%=a[1]%>rem;height: <%=a[0]%>vh;overflow-y: auto;overflow-x: hidden;">
                         <h2 class="sticky-top text-center" style="background: white">Cart</h2>
                         <% if(cartDishes){%>
                         <% cartDishes.forEach((dish) => {%>
@@ -149,7 +146,7 @@
                                                         <h6>&#8377;<%=totalprice%></h6>
                                                     </div>
                                                 </div>
-                                                <a type="button" class="btn btn-primary btn-block" href="/order">Place
+                                                <a type="button" class="btn btn-primary btn-block" href="/place/order">Place
                                                     Order</a>
                                             </div>
                                             <%}%>
@@ -189,5 +186,9 @@
                                     </div>
                                 </div>
                             </div>
-
+                            <script>
+                                $(document).ready(function(){
+                                    window.location.hash = "<%- activeCategory.toString() %>"
+                                });
+                            </script>
                             <%- include('partials/footer'); -%>
