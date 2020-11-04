@@ -1,10 +1,21 @@
+const mongoose = require("mongoose");
 var express = require('express');
 var router = express.Router();
 
 var fs = require('fs');
 var Cart = require('../models/cart');
+const { json } = require("body-parser");
 
 var menu = JSON.parse(fs.readFileSync('./data/menu.json', 'utf8'));
+
+const orderSchema = new mongoose.Schema({
+  name: String,
+  received: String,
+  accepted: String,
+  delivered: String
+});
+
+const Order = mongoose.model("Order", orderSchema);
 
 router.get('/favicon.ico', (req, res) => {
   return 'your faveicon'
@@ -81,6 +92,34 @@ router.post('/remove', function (req, res, next) {
 
 router.get('/place/order', function (req, res, next) {
   var cart = new Cart(req.session.cart ? req.session.cart : {});
+  var temp = JSON.stringify(cart.dishes);
+  Order.findOne({name: cart.table}, function(err, order){
+    if(order){
+      var orderedDishesDb = JSON.parse(order.received);
+      var tempobj = JSON.parse(temp);
+
+      for(id in tempobj){
+        if(orderedDishesDb[id]){
+          orderedDishesDb[id].quantity += tempobj[id].quantity
+          orderedDishesDb[id].price += tempobj[id].price
+        }else{
+          orderedDishesDb[id] = JSON.parse(JSON.stringify(tempobj[id]));
+        }
+      }
+      order.received = JSON.stringify(orderedDishesDb);
+      order.save();
+      res.io.emit("order", {name: order.name,received: orderedDishesDb});
+    }else{
+      const order = new Order({
+        name: cart.table,
+        received: temp,
+        accepted: "",
+        delivered: ""
+      });
+      order.save();
+      res.io.emit("newOrder", {name: cart.table,received: JSON.parse(temp)});
+    }
+  });
   if (cart.getDishes()) {
     cart.order();
   }

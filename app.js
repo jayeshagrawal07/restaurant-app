@@ -5,29 +5,40 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var favicon = require('serve-favicon');
 var bodyParser = require('body-parser');
+const mongoose = require("mongoose");
 
 var session = require('express-session');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var areaRouter = require('./routes/area');
 
 var app = express();
+
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+const sessionMiddleware = session({
+  secret: 'secret',
+  resave: false,
+  saveUninitialized: true
+});
 
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(session({
-  secret: 'secret',
-  resave: false,
-  saveUninitialized: true
-}))
+app.use(sessionMiddleware)
 app.use(express.static(path.join(__dirname, 'public')));
+
+mongoose.connect("mongodb://localhost:27017/Restaurant2DB", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 
 // res.locals is an object passed to ejs engine
 app.use(function(req, res, next) {
@@ -35,8 +46,24 @@ app.use(function(req, res, next) {
   next();
 });
 
+io.use((socket, next) => {
+  sessionMiddleware(socket.request, {}, next);
+});
+
+app.use(function(req, res, next){
+  res.io = io;
+  next();
+});
+
+// io.on('connect', (socket) => {
+//   const session = socket.request.session;
+//   // session.connections++;
+//   // session.save();
+//   // console.log(session);
+// });
+
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/area', areaRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -54,4 +81,4 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+module.exports = {app: app, server: server};

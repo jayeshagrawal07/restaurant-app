@@ -1,620 +1,621 @@
-{  
-        "starters": [{
-            "name": "Spring roll",
-            "description": "These Vegetable Spring Rolls include fresh mango and are paired with a nut butter dipping sauce, sure to heighten the senses.",
-            "image": "image/starters_1.png",
-            "price": 145,
-			"id": "starters_1"
-        },
-        {
-            "name": "Chilli paneer",
-            "description": "Chilli Paneer is a delicious Indo Chinese recipe where Paneer or Indian cottage cheese is batter fried and then tossed in a spicy sauce mixture.",
-            "image": "image/starters_2.png",
-            "price": 195,
-			"id": "starters_2"
-        },
-
-        {
-            "name": "Hara bhara kabab",
-            "description": "Hara bhara kabab are pan_fried spiced patties made with a mix of spinach, green peas and potatoes. The recipe is easy to make and healthy as well – since it has the best of both spinach and green peas",
-            "image": "image/starters_3.png",
-            "price": 162,
-			"id": "starters_3"
-        },
-        {
-            "name": "Veg lollipop",
-            "description": "Vegetable lollipop are crispy fried balls made with mix vegetable filling. veg lollipops make for a tasty vegetarian appetizer or a starter snack at get together and parties",
-            "image": "image/starters_4.png",
-            "price": 180,
-			"id": "starters_4"
-        },
-        {
-            "name": "French Fries",
-            "description": "French fries are long, thin pieces of potato fried in oil or fat. The French fries were thin and crispy.",
-            "image": "image/starters_5.png",
-            "price": 110,
-			"id": "starters_5"
-        },
-        {
-            "name": "Garlic bread",
-            "description": "Garlic bread consists of bread topped with garlic and olive oil or butter and may include additional herbs, such as oregano or chives. It is then either grilled or broiled until toasted or baked in a conventional or bread oven.",
-            "image": "image/starters_6.png",
-            "price": 100,
-			"id": "starters_6"
-        }
-		],
-
-   
-
-    "chinese_&_snacks": [{
-            "name": "Chinese Bhel",
-            "image": "image/chinese_&_snacks_1.png",
-            "price": 100,
-            "id": "chinese_&_snacks_1"
-        },
-        {
-            "name": "Veg  Manchurian (gravy)",
-            "image": "image/chinese_&_snacks_2.png",
-            "price": 80,
-			"id": "chinese_&_snacks_2"
-        },
-        {
-            "name": "Veg Manchurian (dry) ",
-            "image": "image/chinese_&_snacks_3.png",
-            "price": 100,
-			"id": "chinese_&_snacks_3"
-        },
-        {
-            "name": "Noodles",
-            "image": "image/chinese_&_snacks_4.png",
-            "price": 70,
-			"id": "chinese_&_snacks_4"
-        },
-        {
-            "name": "Fried Rice",
-            "image": "image/chinese_&_snacks_5.png",
-            "price": 80,
-			"id": "chinese_&_snacks_5"
-        },
-        {
-            "name": "Hakka Noodles",
-            "image": "image/chinese_&_snacks_6.png",
-            "price": 120,
-			"id": "chinese_&_snacks_6"
-        },
-        {
-            "name": "Crispi Corn",
-            "image": "image/chinese_&_snacks_7.png",
-            "price": 140,
-			"id": "chinese_&_snacks_7"
-        },
-        {
-            "name": "Finger Chips",
-            "image": "image/chinese_&_snacks_8.png",
-            "price": 110,
-			"id": "chinese_&_snacks_8"
-        }
-    
+{
+    "starters": [
+      {
+        "name": "Spring roll",
+        "description": "",
+        "image": "images/starters_1.png",
+        "price": 145,
+        "id": "starters_1"
+      },
+      {
+        "name": "Chilli paneer",
+        "description": "",
+        "image": "images/starters_2.png",
+        "price": 195,
+        "id": "starters_2"
+      },
+      {
+        "name": "Hara bhara kabab",
+        "description": "",
+        "image": "images/starters_3.png",
+        "price": 162,
+        "id": "starters_3"
+      },
+      {
+        "name": "Veg lollipop",
+        "description": "",
+        "image": "images/starters_4.png",
+        "price": 180,
+        "id": "starters_4"
+      },
+      {
+        "name": "French Fries",
+        "description": "",
+        "image": "images/starters_5.png",
+        "price": 110,
+        "id": "starters_5"
+      },
+      {
+        "name": "Garlic bread",
+        "description": "",
+        "image": "images/starters_6.png",
+        "price": 100,
+        "id": "starters_6"
+      }
     ],
-    "paneer_main_course": [{
-            "name": "Paneer Pudina",
-            "description": "Pudina paneer gravy with dried mint, not the green gravy version",
-            "image": "image/panner_main_course_1.png",
-            "price": 180,
-			"id": "panner_main_course_1"
-        },
-        {
-            "name": "Paneer Punjabi",
-            "description": "Paneer or cottage cheese is a fresh cheese made by coagulating milk and separating the whey. It is used widely in Indian, oriental, continental and other cuisines because of its soft mouth_feel and versatility.",
-            "image": "image/panner_main_course_2.png",
-            "price": 170,
-			"id": "panner_main_course_2"
-        },
-        {
-            "name": "Paneer Kolhapuri",
-            "description": "a spicy dish from maharastrian or specifically from kolhapur region prepared with paneer and dry kolhapur masala. the masala is mixture of dry spices with red chillies and dry coconut ",
-            "image": "image/panner_main_course_3.png",
-            "price": 190,
-			"id": "panner_main_course_3"
-        },
-        {
-            "name": "Panner Mirchi",
-            "description": "A fragrant curry brightened with black pepper. A favourite at dinner parties ",
-            "image": "image/panner_main_course_4.png",
-            "price": 175,
-			"id": "panner_main_course_4"
-        },
-        {
-            "name": "Paneer Mastana",
-            "description": "Soft Paneer cubes were marinated in yogurt cream & a white sauce. The subtle flavor of garlic was noticeable. It was served with a spicy green chutney made from coriander, mint & chilies.",
-            "image": "image/panner_main_course_5.png",
-            "price": 200,
-			"id": "panner_main_course_5"
-        },
-        {
-            "name": "Shahi Paneer",
-            "description": "Shahi Paneer is a delicious North Indian curry made with Paneer (cottage cheese) and tomato based spicy gravy laced with Indian curry spices.",
-            "image": "image/panner_main_course_6.png",
-            "price": 210,
-			"id": "panner_main_course_6"
-        },
-
-
-        {
-            "name": "Kadhai Paneer",
-            "description": "Kadai Paneer is a popular paneer recipe where paneer and bell peppers are cooked in a spicy masala. It is one of the most popular paneer recipes.",
-            "image": "image/panner_main_course_7.png",
-            "price": 210,
-			"id": "panner_main_course_7"
-        },
-
-        {
-            "name": "Butter Paneer Masala",
-            "description": " it is a rich & creamy curry made with paneer, spices, onions, tomatoes, cashews and butter. It is one of the most popular dishes in Indian restaurants ",
-            "image": "image/panner_main_course_8.png",
-            "price": 210,
-			"id": "panner_main_course_8"
-        },
-        {
-            "name": "Matar Paneer",
-            "description": "Matar Paneer is a popular Indian curry dish made with green peas and cottage cheese from the North Indian cuisine. Garnish with chopped coriander leaves.",
-            "image": "image/panner_main_course_9.png",
-            "price": 210,
-			"id": "panner_main_course_9"
-        },
-        {
-            "name": "Palak Paneer",
-            "description": "Palak Paneer is a popular Indian dish of soft cottage cheese cubes in a mild, spiced smooth spinach sauce. This delicious creamy dish is made with fresh spinach leaves, paneer (cottage cheese), onions, herbs and spices.",
-            "image": "image/panner_main_course_10.png",
-            "price": 169,
-			"id": "panner_main_course_10"
-        },
-        {
-            "name": "Paneer Do Pyaza",
-            "description": "Restaurant style paneer do pyaza: Originally this is Mughlai dish where gravy is rich, creamy and no tomatoes are added",
-            "image": "image/panner_main_course_11.png",
-            "price": 183,
-			"id": "panner_main_course_11"
-        }
+    "chinese_&_snacks": [
+      {
+        "name": "Chinese Bhel",
+        "image": "images/chinese_&_snacks_1.png",
+        "price": 100,
+        "id": "chinese_&_snacks_1"
+      },
+      {
+        "name": "Veg  Manchurian (gravy)",
+        "image": "images/chinese_&_snacks_2.png",
+        "price": 80,
+        "id": "chinese_&_snacks_2"
+      },
+      {
+        "name": "Veg Manchurian (dry) ",
+        "image": "images/chinese_&_snacks_3.png",
+        "price": 100,
+        "id": "chinese_&_snacks_3"
+      },
+      {
+        "name": "Noodles",
+        "image": "images/chinese_&_snacks_4.png",
+        "price": 70,
+        "id": "chinese_&_snacks_4"
+      },
+      {
+        "name": "Fried Rice",
+        "image": "images/chinese_&_snacks_5.png",
+        "price": 80,
+        "id": "chinese_&_snacks_5"
+      },
+      {
+        "name": "Hakka Noodles",
+        "image": "images/chinese_&_snacks_6.png",
+        "price": 120,
+        "id": "chinese_&_snacks_6"
+      },
+      {
+        "name": "Crispi Corn",
+        "image": "images/chinese_&_snacks_7.png",
+        "price": 140,
+        "id": "chinese_&_snacks_7"
+      },
+      {
+        "name": "Finger Chips",
+        "image": "images/chinese_&_snacks_8.png",
+        "price": 110,
+        "id": "chinese_&_snacks_8"
+      }
     ],
-    "veg_main_course": [{
-            "name": "Palak Plain",
-            "description": "Palak Paneer, a popular Restaurant style Punjabi Curry is prepared by cooking ... serving tasty Punjabi palak paneer gravy with various Indian breads",
-            "image": "image/veg_main_course_1.png",
-            "price": 146,
-			"id": "veg_main_course_1"
-        },
-        {
-            "name": "Aloo Palak",
-            "description": "Aloo Palak is North Indian side dish. Dhaba Style Aloo Palak is very healthy green curry. Dhaba Style Aloo Palak is spicy spinach potato curry.",
-            "image": "image/veg_main_course_2.png",
-            "price": 150,
-			"id": "veg_main_course_2"
-        },
-        {
-            "name": "Aloo Gobi",
-            "description": "Aloo gobi is a vegetarian dish from the Indian subcontinent made with potatoes (aloo), cauliflower (gob(h)i), and Indian spices",
-            "image": "image/veg_main_course_3.png",
-            "price": 152,
-			"id": "veg_main_course_3"
-        },
-        {
-            "name": "Aloo Jeera",
-            "description": "Jeera aloo is basically a stir_fry potato dish where boiled potatoes are tossed in a spice blend which is majorly dominated by cumin or jeera.",
-            "image": "image/veg_main_course_4.png",
-            "price": 156,
-			"id": "veg_main_course_4"
-        },
-        {
-            "name": "Veg Kofta",
-            "description": "malai kofta recipe, the kofta are made with paneer and potatoes. They are crisp as well as melt in the mouth.",
-            "image": "image/veg_main_course_5.png",
-            "price": 183,
-			"id": "veg_main_course_5"
-        },
-        {
-            "name": "Malai Kofta",
-            "description": "Malai Kofta is a very popular Indian vegetarian dish where balls (kofta) made of potato and paneer are deep fried and served with a creamy and spiced tomato based curry. ",
-            "image": "image/veg_main_course_6.png",
-            "price": 183,
-			"id": "veg_main_course_6"
-        }
+    "paneer_main_course": [
+      {
+        "name": "Paneer Pudina",
+        "description": "",
+        "image": "images/panner_main_course_1.png",
+        "price": 180,
+        "id": "panner_main_course_1"
+      },
+      {
+        "name": "Paneer Punjabi",
+        "description": "",
+        "image": "images/panner_main_course_2.png",
+        "price": 170,
+        "id": "panner_main_course_2"
+      },
+      {
+        "name": "Paneer Kolhapuri",
+        "description": "",
+        "image": "images/panner_main_course_3.png",
+        "price": 190,
+        "id": "panner_main_course_3"
+      },
+      {
+        "name": "Panner Mirchi",
+        "description": "",
+        "image": "images/panner_main_course_4.png",
+        "price": 175,
+        "id": "panner_main_course_4"
+      },
+      {
+        "name": "Paneer Mastana",
+        "description": "",
+        "image": "images/panner_main_course_5.png",
+        "price": 200,
+        "id": "panner_main_course_5"
+      },
+      {
+        "name": "Shahi Paneer",
+        "description": "",
+        "image": "images/panner_main_course_6.png",
+        "price": 210,
+        "id": "panner_main_course_6"
+      },
+      {
+        "name": "Kadhai Paneer",
+        "description": "",
+        "image": "images/panner_main_course_7.png",
+        "price": 210,
+        "id": "panner_main_course_7"
+      },
+      {
+        "name": "Butter Paneer Masala",
+        "description": "",
+        "image": "images/panner_main_course_8.png",
+        "price": 210,
+        "id": "panner_main_course_8"
+      },
+      {
+        "name": "Matar Paneer",
+        "description": "",
+        "image": "images/panner_main_course_9.png",
+        "price": 210,
+        "id": "panner_main_course_9"
+      },
+      {
+        "name": "Palak Paneer",
+        "description": "",
+        "image": "images/panner_main_course_10.png",
+        "price": 169,
+        "id": "panner_main_course_10"
+      },
+      {
+        "name": "Paneer Do Pyaza",
+        "description": "",
+        "image": "images/panner_main_course_11.png",
+        "price": 183,
+        "id": "panner_main_course_11"
+      }
     ],
-    "dal_main_course": [{
-            "name": "Dal Makhani",
-            "description": "Dal Makhani is a classic north Indian dish where the lentils are slowly simmered for hours in a very aromatic buttery, creamy tomato sauce.",
-            "image": "image/dal_main_course_1.png",
-            "price": 192,
-			"id": "dal_main_course_1"
-        },
-        {
-            "name": "Yellow Dal",
-            "description": "A simple, healthy split yellow lentil (daal) recipe prepared with aromatics, seasoned with tomatoes and garlic, and flavored with spiced oil known as Tadka.",
-            "image": "image/dal_main_course_2.png",
-            "price": 141,
-			"id": "dal_main_course_2"
-        },
-        {
-            "name": "Special Dal Butter",
-            "description": "These are not only popular on the restaurant menus but also in most North ... So this is an amazing dish to make for a weekend or special festive meal.",
-            "image": "image/dal_main_course_3.png",
-            "price": 135,
-			"id": "dal_main_course_3"
-        },
-        {
-            "name": "Dal Fry",
-            "description": "Dal fry recipe with stovetop & Instant pot options. This dal fry is a basic Indian dish made by cooking lentils with spices",
-            "image": "image/dal_main_course_4.png",
-            "price": 135,
-			"id": "dal_main_course_4"
-        }
+    "veg_main_course": [
+      {
+        "name": "Palak Plain",
+        "description": "",
+        "image": "images/veg_main_course_1.png",
+        "price": 146,
+        "id": "veg_main_course_1"
+      },
+      {
+        "name": "Aloo Palak",
+        "description": "",
+        "image": "images/veg_main_course_2.png",
+        "price": 150,
+        "id": "veg_main_course_2"
+      },
+      {
+        "name": "Aloo Gobi",
+        "description": "",
+        "image": "images/veg_main_course_3.png",
+        "price": 152,
+        "id": "veg_main_course_3"
+      },
+      {
+        "name": "Aloo Jeera",
+        "description": "",
+        "image": "images/veg_main_course_4.png",
+        "price": 156,
+        "id": "veg_main_course_4"
+      },
+      {
+        "name": "Veg Kofta",
+        "description": "",
+        "image": "images/veg_main_course_5.png",
+        "price": 183,
+        "id": "veg_main_course_5"
+      },
+      {
+        "name": "Malai Kofta",
+        "description": "",
+        "image": "images/veg_main_course_6.png",
+        "price": 183,
+        "id": "veg_main_course_6"
+      }
     ],
-    "breads": [{
-            "name": "Breads",
-            "description": "Indian bread are a wide variety of flatbreads and crêpes which are an integral part of Indian cuisine.",
-            "image": "image/breads_1.png",
-            "price": 30,
-			"id": "breads_1"
-        },
-        {
-            "name": "Butter Roti",
-            "description": "Indian bread is the natural choice to accompany a curry, and you’ll be able to use it to mop up all that tasty gravy!",
-            "image": "image/breads_2.png",
-            "price": 20,
-			"id": "breads_2"
-        },
-        {
-            "name": "Tawa Roti",
-            "description": "The roti is a traditional flatbread from the Indian subcontinent. It is normally eaten with cooked vegetables or curries;",
-            "image": "image/breads_3.png",
-            "price": 17,
-			"id": "breads_3"
-        },
-        {
-            "name": "Plain Naan",
-            "description": "One of the most popular Indian breads is Naan, a soft and chewy flat bread that makes the perfect accompaniment to any saucy dish.",
-            "image": "image/breads_4.png",
-            "price": 30,
-			"id": "breads_4"
-        },
-        {
-            "name": "Butter Naan",
-            "description": "Plain Naan bread rubbed with butter.",
-            "image": "image/breads_5.png",
-            "price": 45,
-			"id": "breads_5"
-        },
-        {
-            "name": "Garlic Naan Butter",
-            "description": "Add some grated garlic to the dough and then brush the naan with lots of garlic butter.",
-            "image": "image/breads_6.png",
-            "price": 60,
-			"id": "breads_6"
-        },
-        {
-            "name": "Tawa Paratha",
-            "description": "Plain Parathas also known as Tawa Paratha are crisper and flakier version of phulka's",
-            "image": "image/breads_7.png",
-            "price": 20,
-			"id": "breads_7"
-        },
-        {
-            "name": "Laccha Paratha",
-            "description": "lachha paratha is traditionally made with whole wheat flour or atta.",
-            "image": "image/breads_8.png",
-            "price": 25,
-			"id": "breads_8"
-        },
-        {
-            "name": "Stuffed Kulcha (Aloo)",
-            "description": "aloo kulcha are crisp as well as soft leavened flatbreads stuffed with a spiced potato stuffing",
-            "image": "image/breads_9.png",
-            "price": 35,
-			"id": "breads_9"
-        },
-        {
-            "name": "Stuffed Kulcha (Paneer)",
-            "description": "paneer stuffed kulcha. ... generally, kulcha's are served during breakfast or lunch as a flat bread with the choice of punjabi curries.",
-            "image": "image/breads_10.png",
-            "price": 45,
-			"id": "breads_10"
-        },
-        {
-            "name": "Stuffed Kulcha (Onion)",
-            "description": "Whole Wheat Onion Kulcha Recipe is a traditional and simple recipe, that is flavored with a delicious onion and mint stuffing.",
-            "image": "image/breads_11.png",
-            "price": 40,
-			"id": "breads_11"
-        }
+    "dal_main_course": [
+      {
+        "name": "Dal Makhani",
+        "description": "",
+        "image": "images/dal_main_course_1.png",
+        "price": 192,
+        "id": "dal_main_course_1"
+      },
+      {
+        "name": "Yellow Dal",
+        "description": "",
+        "image": "images/dal_main_course_2.png",
+        "price": 141,
+        "id": "dal_main_course_2"
+      },
+      {
+        "name": "Special Dal Butter",
+        "description": "",
+        "image": "images/dal_main_course_3.png",
+        "price": 135,
+        "id": "dal_main_course_3"
+      },
+      {
+        "name": "Dal Fry",
+        "description": "",
+        "image": "images/dal_main_course_4.png",
+        "price": 135,
+        "id": "dal_main_course_4"
+      }
     ],
-    "rice_&_biryanis": [{
-            "name": "Steam Rice",
-            "description": "Raw rice soaked in water and then treated with hot steam under pressure. After that the grain is dried and polished",
-            "image": "image/rice_&_biryanis_1.png",
-            "price": 100,
-			"id": "rice_&_biryanis_1"
-        },
-        {
-            "name": "Jeera Rice",
-            "description": "Jeera rice is a flavored Indian rice dish made by cooking basmati rice with ghee, cumin & other fragrant spices. ",
-            "image": "image/rice_&_biryanis_2.png",
-            "price": 150,
-			"id": "rice_&_biryanis_2"
-        },
-        {
-            "name": "Veg Pulao",
-            "description": "Vegetable Pulao (Veg Pulav) is a spicy rice dish prepared by cooking rice with various vegetables and spices",
-            "image": "image/rice_&_biryanis_3.png",
-            "price": 161,
-			"id": "rice_&_biryanis_3"
-        },
-        {
-            "name": "Mix. Veg Pulao",
-            "description": "Vegetable Pulao (Veg Pulav) is a spicy rice dish prepared by cooking rice with various vegetables and spices. In this recipe, assortment of spices, veggies and rice",
-            "image": "image/rice_&_biryanis_4.png",
-            "price": 170,
-			"id": "rice_&_biryanis_4"
-        },
-        {
-            "name": "Hyderabadi Veg Pulao",
-            "description": "hyderabadi veg pulav recipe. ... an easy and flavoured royal recipe made with basmati rice, vegetables and lot of dry fruits and raisins..",
-            "image": "image/rice_&_biryanis_5.png",
-            "price": 200,
-			"id": "rice_&_biryanis_5"
-        },
-        {
-            "name": "Shahi Pulao",
-            "description": "Shahi pulao is the great delicacy of rice recipes made with basmati rice, tasty veggies, paneer and the shahi masala powder",
-            "image": "image/rice_&_biryanis_6.png",
-            "price": 102,
-			"id": "rice_&_biryanis_6"
-        }
+    "breads": [
+      {
+        "name": "Breads",
+        "description": "",
+        "image": "images/breads_1.png",
+        "price": 30,
+        "id": "breads_1"
+      },
+      {
+        "name": "Butter Roti",
+        "description": "",
+        "image": "images/breads_2.png",
+        "price": 20,
+        "id": "breads_2"
+      },
+      {
+        "name": "Tawa Roti",
+        "description": "",
+        "image": "images/breads_3.png",
+        "price": 17,
+        "id": "breads_3"
+      },
+      {
+        "name": "Plain Naan",
+        "description": "",
+        "image": "images/breads_4.png",
+        "price": 30,
+        "id": "breads_4"
+      },
+      {
+        "name": "Butter Naan",
+        "description": "",
+        "image": "images/breads_5.png",
+        "price": 45,
+        "id": "breads_5"
+      },
+      {
+        "name": "Garlic Naan Butter",
+        "description": "",
+        "image": "images/breads_6.png",
+        "price": 60,
+        "id": "breads_6"
+      },
+      {
+        "name": "Tawa Paratha",
+        "description": "",
+        "image": "images/breads_7.png",
+        "price": 20,
+        "id": "breads_7"
+      },
+      {
+        "name": "Laccha Paratha",
+        "description": "",
+        "image": "images/breads_8.png",
+        "price": 25,
+        "id": "breads_8"
+      },
+      {
+        "name": "Stuffed Kulcha (Aloo)",
+        "description": "",
+        "image": "images/breads_9.png",
+        "price": 35,
+        "id": "breads_9"
+      },
+      {
+        "name": "Stuffed Kulcha (Paneer)",
+        "description": "",
+        "image": "images/breads_10.png",
+        "price": 45,
+        "id": "breads_10"
+      },
+      {
+        "name": "Stuffed Kulcha (Onion)",
+        "description": "",
+        "image": "images/breads_11.png",
+        "price": 40,
+        "id": "breads_11"
+      }
     ],
-    "salad_&_raita": [{
-            "name": "Onion Salad",
-            "description": "This North Indian Onion Salad is a raw onion recipe that can either be made with red, white, or sweet onions",
-            "image": "image/salad_&_raita_1.png",
-            "price": 27,
-			"id": "salad_&_raita_1"
-        },
-        {
-            "name": "Green Salad",
-            "description": "Mixed greens, avocado, tomatoes, our black bean salad, shredded cheese, tortilla strips, Southwest ranch dressing. Mixed greens, tomatoes, red onions, carrots, cucumbers, shredded cheese, croutons. ",
-            "image": "image/salad_&_raita_2.png",
-            "price": 41,
-			"id": "salad_&_raita_2"
-        },
-        {
-            "name": "Papad Fry",
-            "description": " Masala Papad is a North Indian snack which is made with the popular Papad that is either roasted or fried",
-            "image": "image/salad_&_raita_3.png",
-            "price": 35,
-			"id": "salad_&_raita_3"
-        },
-        {
-            "name": "Papad Fry Masala",
-            "description": "Papad it is topped with a spicy and tangy mixture of onions, tomatoes, green chillies, coriander leaves, salt, chaat masala powder, red chilli powder and lemon juice.",
-            "image": "image/salad_&_raita_4.png",
-            "price": 60,
-			"id": "salad_&_raita_4"
-        },
-        {
-            "name": "Plain raita",
-            "description": "Raita is a delicious Indian side that has a cooling effect.",
-            "image": "image/salad_&_raita_5.png",
-            "price": 102,
-			"id": "salad_&_raita_5"
-        },
-        {
-            "name": "Boondi Raita",
-            "description": "Boondi Raita is a healthy and delicious accompaniment made with yogurt and small fried balls made of chickpea flour",
-            "image": "image/salad_&_raita_6.png",
-            "price": 102,
-			"id": "salad_&_raita_6"
-        },
-        {
-            "name": "Fruit Raita",
-            "description": "Fruit Raita Recipe is a healthy and yummy dip prepared by mixing curd and diced fresh fruits like apple, pineapple, pomegranate, banana, strawberry etc.",
-            "image": "image/salad_&_raita_7.png",
-            "price": 122,
-			"id": "salad_&_raita_7"
-        },
-        {
-            "name": "Pineapple Raita",
-            "description": "Pineapple Raita is made from pineapple, curds, sugar and jeera.",
-            "image": "image/salad_&_raita_8.png",
-            "price": 122,
-			"id": "salad_&_raita_8"
-        },
-        {
-            "name": "Veg Raita",
-            "description": "One of the scrumptious summer raita recipe is 'Vegetable Raita'. Made with the goodness of yogurt, cucumber, tomatoes, onions etc.",
-            "image": "image/salad_&_raita_9.png",
-            "price": 115,
-			"id": "salad_&_raita_9"
-        }
+    "rice_&_biryanis": [
+      {
+        "name": "Steam Rice",
+        "description": "",
+        "image": "images/rice_&_biryanis_1.png",
+        "price": 100,
+        "id": "rice_&_biryanis_1"
+      },
+      {
+        "name": "Jeera Rice",
+        "description": "",
+        "image": "images/rice_&_biryanis_2.png",
+        "price": 150,
+        "id": "rice_&_biryanis_2"
+      },
+      {
+        "name": "Veg Pulao",
+        "description": "",
+        "image": "images/rice_&_biryanis_3.png",
+        "price": 161,
+        "id": "rice_&_biryanis_3"
+      },
+      {
+        "name": "Mix. Veg Pulao",
+        "description": "",
+        "image": "images/rice_&_biryanis_4.png",
+        "price": 170,
+        "id": "rice_&_biryanis_4"
+      },
+      {
+        "name": "Hyderabadi Veg Pulao",
+        "description": "",
+        "image": "images/rice_&_biryanis_5.png",
+        "price": 200,
+        "id": "rice_&_biryanis_5"
+      },
+      {
+        "name": "Shahi Pulao",
+        "description": "",
+        "image": "images/rice_&_biryanis_6.png",
+        "price": 102,
+        "id": "rice_&_biryanis_6"
+      }
     ],
-    "desserts_&_sweets": [{
-            "name": "Gulab Jamun",
-            "image": "image/desserts_&_sweets_1.png",
-            "price": 100,
-			"id": "desserts_&_sweets_1"
-        },
-        {
-            "name": "Rasgulla",
-            "image": "image/desserts_&_sweets_2.png",
-            "price": 100,
-			"id": "desserts_&_sweets_2"
-        },
-        {
-            "name": "Rabdi",
-            "image": "image/desserts_&_sweets_3.png",
-            "price": 200,
-			"id": "desserts_&_sweets_3"
-        },
-        {
-            "name": "Gajar Halwa",
-            "image": "image/desserts_&_sweets_4.png",
-            "price": 250,
-			"id": "desserts_&_sweets_4"
-        },
-        {
-            "name": "Besan chakki",
-            "image": "image/desserts_&_sweets_5.png",
-            "price": 150,
-			"id": "desserts_&_sweets_5"
-        },
-        {
-            "name": "Milk Cake",
-            "image": "image/desserts_&_sweets_6.png",
-            "price": 100,
-			"id": "desserts_&_sweets_6"
-        },
-        {
-            "name": "Kaju katli",
-            "image": "image/desserts_&_sweets_7.png",
-            "price": 210,
-			"id": "desserts_&_sweets_7"
-        },
-        {
-            "name": "Mix Bites",
-            "image": "image/desserts_&_sweets_8.png",
-            "price": 238,
-			"id": "desserts_&_sweets_8"
-        },
-        {
-            "name": "Besan Ladoo",
-            "image": "image/desserts_&_sweets_9.png",
-            "price": 100,
-			"id": "desserts_&_sweets_9"
-        },
-        {
-            "name": "Kesar Kaju Cake",
-            "image": "image/desserts_&_sweets_10.png",
-            "price": 228,
-			"id": "desserts_&_sweets_10"
-        }
+    "salad_&_raita": [
+      {
+        "name": "Onion Salad",
+        "description": "",
+        "image": "images/salad_&_raita_1.png",
+        "price": 27,
+        "id": "salad_&_raita_1"
+      },
+      {
+        "name": "Green Salad",
+        "description": "",
+        "image": "images/salad_&_raita_2.png",
+        "price": 41,
+        "id": "salad_&_raita_2"
+      },
+      {
+        "name": "Papad Fry",
+        "description": "",
+        "image": "images/salad_&_raita_3.png",
+        "price": 35,
+        "id": "salad_&_raita_3"
+      },
+      {
+        "name": "Papad Fry Masala",
+        "description": "",
+        "image": "images/salad_&_raita_4.png",
+        "price": 60,
+        "id": "salad_&_raita_4"
+      },
+      {
+        "name": "Plain raita",
+        "description": "",
+        "image": "images/salad_&_raita_5.png",
+        "price": 102,
+        "id": "salad_&_raita_5"
+      },
+      {
+        "name": "Boondi Raita",
+        "description": "",
+        "image": "images/salad_&_raita_6.png",
+        "price": 102,
+        "id": "salad_&_raita_6"
+      },
+      {
+        "name": "Fruit Raita",
+        "description": "",
+        "image": "images/salad_&_raita_7.png",
+        "price": 122,
+        "id": "salad_&_raita_7"
+      },
+      {
+        "name": "Pineapple Raita",
+        "description": "",
+        "image": "images/salad_&_raita_8.png",
+        "price": 122,
+        "id": "salad_&_raita_8"
+      },
+      {
+        "name": "Veg Raita",
+        "description": "",
+        "image": "images/salad_&_raita_9.png",
+        "price": 115,
+        "id": "salad_&_raita_9"
+      }
     ],
-    "beverages": [{
-            "name": "Cola / Lemon / Orange",
-            "image": "image/beverages_1.png",
-            "price": 50,
-			"id": "beverages_1"
-        },
-        {
-            "name": "Lime Soda Sweet/Salt",
-            "image": "image/beverages_2.png",
-            "price": 30,
-			"id": "beverages_2"
-        },
-        {
-            "name": "Mineral Water",
-            "image": "image/beverages_3.png",
-            "price": 25,
-			"id": "beverages_3"
-        },
-        {
-            "name": "Lime Water Sweet/Salt",
-            "image": "image/beverages_4.png",
-            "price": 30,
-			"id": "beverages_4"
-        }
+    "desserts_&_sweets": [
+      {
+        "name": "Gulab Jamun",
+        "image": "images/desserts_&_sweets_1.png",
+        "price": 100,
+        "id": "desserts_&_sweets_1"
+      },
+      {
+        "name": "Rasgulla",
+        "image": "images/desserts_&_sweets_2.png",
+        "price": 100,
+        "id": "desserts_&_sweets_2"
+      },
+      {
+        "name": "Rabdi",
+        "image": "images/desserts_&_sweets_3.png",
+        "price": 200,
+        "id": "desserts_&_sweets_3"
+      },
+      {
+        "name": "Gajar Halwa",
+        "image": "images/desserts_&_sweets_4.png",
+        "price": 250,
+        "id": "desserts_&_sweets_4"
+      },
+      {
+        "name": "Besan chakki",
+        "image": "images/desserts_&_sweets_5.png",
+        "price": 150,
+        "id": "desserts_&_sweets_5"
+      },
+      {
+        "name": "Milk Cake",
+        "image": "images/desserts_&_sweets_6.png",
+        "price": 100,
+        "id": "desserts_&_sweets_6"
+      },
+      {
+        "name": "Kaju katli",
+        "image": "images/desserts_&_sweets_7.png",
+        "price": 210,
+        "id": "desserts_&_sweets_7"
+      },
+      {
+        "name": "Mix Bites",
+        "image": "images/desserts_&_sweets_8.png",
+        "price": 238,
+        "id": "desserts_&_sweets_8"
+      },
+      {
+        "name": "Besan Ladoo",
+        "image": "images/desserts_&_sweets_9.png",
+        "price": 100,
+        "id": "desserts_&_sweets_9"
+      },
+      {
+        "name": "Kesar Kaju Cake",
+        "image": "images/desserts_&_sweets_10.png",
+        "price": 228,
+        "id": "desserts_&_sweets_10"
+      }
     ],
-    "tea_&_coffee": [{
-            "name": "Tea",
-            "image": "tea_&_coffee_1.png",
-            "price": 30,
-			"id": "tea_&_coffee_1"
-        },
-        {
-            "name": "Coffee Mocachino",
-            "image": "image/tea_&_coffee_2.png",
-            "price": 51,
-			"id": "tea_&_coffee_2"
-        },
-        {
-            "name": "Coffee Americano (Black)",
-            "image": "image/tea_&_coffee_3.png",
-            "price": 55,
-			"id": "tea_&_coffee_3"
-        },
-        {
-            "name": "Coffee Espresso",
-            "image": "image/tea_&_coffee_4.png",
-            "price": 60,
-			"id": "tea_&_coffee_4"
-        },
-        {
-            "name": "Coffee Cappuccino",
-            "image": "image/tea_&_coffee_5.png",
-            "price": 55,
-			"id": "tea_&_coffee_5"
-        },
-        {
-            "name": "Espresso (Black)",
-            "image": "image/tea_&_coffee_6.png",
-            "price": 55,
-			"id": "tea_&_coffee_6"
-        },
-        {
-            "name": "Cold Coffee (Frappe)",
-            "image": "image/tea_&_coffee_7.png",
-            "price": 70,
-			"id": "tea_&_coffee_7"
-        },
-        {
-            "name": "Ice Tea (Lemon)",
-            "image": "image/tea_&_coffee_8.png",
-            "price": 51,
-			"id": "tea_&_coffee_8"
-        }
+    "beverages": [
+      {
+        "name": "Cola / Lemon / Orange",
+        "image": "images/beverages_1.png",
+        "price": 50,
+        "id": "beverages_1"
+      },
+      {
+        "name": "Lime Soda Sweet/Salt",
+        "image": "images/beverages_2.png",
+        "price": 30,
+        "id": "beverages_2"
+      },
+      {
+        "name": "Mineral Water",
+        "image": "images/beverages_3.png",
+        "price": 25,
+        "id": "beverages_3"
+      },
+      {
+        "name": "Lime Water Sweet/Salt",
+        "image": "images/beverages_4.png",
+        "price": 30,
+        "id": "beverages_4"
+      }
+    ],
+    "tea_&_coffee": [
+      {
+        "name": "Tea",
+        "image": "images/tea_&_coffee_1.png",
+        "price": 30,
+        "id": "tea_&_coffee_1"
+      },
+      {
+        "name": "Coffee Mocachino",
+        "image": "images/tea_&_coffee_2.png",
+        "price": 51,
+        "id": "tea_&_coffee_2"
+      },
+      {
+        "name": "Coffee Americano (Black)",
+        "image": "images/tea_&_coffee_3.png",
+        "price": 55,
+        "id": "tea_&_coffee_3"
+      },
+      {
+        "name": "Coffee Espresso",
+        "image": "images/tea_&_coffee_4.png",
+        "price": 60,
+        "id": "tea_&_coffee_4"
+      },
+      {
+        "name": "Coffee Cappuccino",
+        "image": "images/tea_&_coffee_5.png",
+        "price": 55,
+        "id": "tea_&_coffee_5"
+      },
+      {
+        "name": "Espresso (Black)",
+        "image": "images/tea_&_coffee_6.png",
+        "price": 55,
+        "id": "tea_&_coffee_6"
+      },
+      {
+        "name": "Cold Coffee (Frappe)",
+        "image": "images/tea_&_coffee_7.png",
+        "price": 70,
+        "id": "tea_&_coffee_7"
+      },
+      {
+        "name": "Ice Tea (Lemon)",
+        "image": "images/tea_&_coffee_8.png",
+        "price": 51,
+        "id": "tea_&_coffee_8"
+      }
     ],
     "category": [
-	      {
-            "name": "Starters",
-            "id": "starters"
-         },
-        {
-            "name": "Chinese & Snacks",
-            "id": "chinese_&_snacks"
-        },
-        
-		{
-            "name": "Paneer Main Course",
-            "id": "paneer_main_course"
-        },
-		{
-            "name": "Veg Main Course",
-            "id": "veg_main_course"
-        },
-		{
-            "name": "Dal Main Course",
-            "id": "dal_main_course"
-        },
-		{
-            "name": "Breads",
-            "id": "breads"
-        },
-		{
-            "name": "Rice & Biryanis",
-            "id": "rice_&_biryanis"
-        },
-		{
-            "name": "Salad & Raita",
-            "id": "salad_&_raita"
-        },
-		{
-            "name": "Desserts & Sweets",
-            "id": "desserts_&_sweets"
-        },
-		{
-            "name": "Beverages",
-            "id": "beverages"
-        },
-		{
-            "name": "Tea & Coffee",
-            "id": "tea_&_coffee"
-        }
-         
+      {
+        "name": "Starters",
+        "id": "starters"
+      },
+      {
+        "name": "Chinese & Snacks",
+        "id": "chinese_&_snacks"
+      },
+      {
+        "name": "Paneer Main Course",
+        "id": "paneer_main_course"
+      },
+      {
+        "name": "Veg Main Course",
+        "id": "veg_main_course"
+      },
+      {
+        "name": "Dal Main Course",
+        "id": "dal_main_course"
+      },
+      {
+        "name": "Breads",
+        "id": "breads"
+      },
+      {
+        "name": "Rice & Biryanis",
+        "id": "rice_&_biryanis"
+      },
+      {
+        "name": "Salad & Raita",
+        "id": "salad_&_raita"
+      },
+      {
+        "name": "Desserts & Sweets",
+        "id": "desserts_&_sweets"
+      },
+      {
+        "name": "Beverages",
+        "id": "beverages"
+      },
+      {
+        "name": "Tea & Coffee",
+        "id": "tea_&_coffee"
+      }
     ]
-}
+  }

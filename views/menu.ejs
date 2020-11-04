@@ -1,194 +1,212 @@
 <%- include('partials/header'); -%>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col col-sm-9 col-9" data-spy="scroll" data-target="#myScrollspy"
-            style="position: relative;overflow-y: scroll;height: 100vh;">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col col-sm-4 col-4 category-section">
-                        <ul class="nav nav-pills nav-stacked" id="myScrollspy">
-                            <h2 class="text-center" style="width: 100%;">Category</h2>
-                            <%menu.category.forEach( function(category,i) {%>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#<%= category.id %>"><%= category.name %></a>
-                            </li>
-                            <%});%>
-                        </ul>
-                    </div>
-                    <div class="col col-sm-8 col-8">
-                        <%menu.category.forEach((category) => {%>
-                        <div id="<%= category.id %>" class="bg-success pb-3">
-                            <% var dishCategory = menu[category.id]%>
-                            <h3 class="sticky-top section-heading"><%= category.name %></h3>
-                            <div class="container-fluid">
-                                <%if(dishCategory){%>
-                                <%dishCategory.forEach((dish) => {%>
-                                <div class="card mt-3">
-                                    <span id="<%= dish.id%>" style="position: relative;
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col col-sm-9 col-9" data-spy="scroll" data-target="#myScrollspy"
+                style="position: relative;overflow-y: scroll;height: 100vh;">
+                <div class="container-fluid">
+                    <div class="row">
+                        <!-- ======Category Started====== -->
+                        <div class="col col-sm-4 col-4 category-section">
+                            <ul class="nav nav-pills nav-stacked" id="myScrollspy">
+                                <h2 class="text-center" style="width: 100%;">Category</h2>
+                                <%menu.category.forEach( function(category,i) {%>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#<%= category.id %>"><%= category.name %></a>
+                                </li>
+                                <%});%>
+                            </ul>
+                        </div>
+                        <!-- ======Category Ended====== -->
+                        <!-- ======Menu Started====== -->
+                        <div class="col col-sm-8 col-8">
+                            <%menu.category.forEach((category) => {%>
+                            <div id="<%= category.id %>" class="bg-success pb-3">
+                                <% var dishCategory = menu[category.id]%>
+                                <h3 class="sticky-top section-heading"><%= category.name %></h3>
+                                <div class="container-fluid">
+                                    <%if(dishCategory){%>
+                                    <%dishCategory.forEach((dish) => {%>
+                                    <div class="card mt-3">
+                                        <span id="<%= dish.id%>" style="position: relative;
                                     top: -6vh;"></span>
-                                    <div class="row no-gutters">
-                                        <div class="col-md-4 bg-secondary">
-                                            <!-- <img src="" class="card-img" alt=""> -->
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="card-body">
-                                                <div class="dish-card">
-                                                    <div class="dish-title"><%= dish.name %></div>
-                                                    <div class="price">&#8377;<%= dish.price %></div>
+                                        <div class="row no-gutters">
+                                            <div class="col-md-4 bg-secondary"
+                                                style="/*background: url(<%= dish.image %>);*/">
+                                                <!-- <img src="images/123.png" class="card-img" alt=""> -->
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card-body">
+                                                    <div class="dish-card">
+                                                        <div class="dish-title"><%= dish.name %></div>
+                                                        <div class="price">&#8377;<%= dish.price %></div>
+                                                    </div>
+                                                    <p class="card-text"><small class="text-muted">
+                                                            <%= dish.description %></small>
+                                                    </p>
+                                                    <form action="/add" method="POST">
+                                                        <input type="hidden" name="category" value="<%= category.id %>">
+                                                        <input type="hidden" name="id" value="<%= dish.id %>">
+                                                        <input type="number" name="qty" value="1" placeholder="Qty."
+                                                            min="1" max="50">
+                                                        <button type="submit" class="btn" style="margin-left: 1rem;">Add
+                                                            +</button>
+                                                    </form>
                                                 </div>
-                                                <p class="card-text"><small class="text-muted">
-                                                        <%= dish.description %></small>
-                                                </p>
-                                                <form action="/add" method="POST">
-                                                    <input type="hidden" name="category" value="<%= category.id %>">
-                                                    <input type="hidden" name="id" value="<%= dish.id %>">
-                                                    <input type="number" name="qty" value="1" placeholder="Qty." min="1"
-                                                        max="50">
-                                                    <button type="submit" class="btn" style="margin-left: 1rem;">Add
-                                                        +</button>
-                                                </form>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <%});%>
-                                <%}else{%>
-                                <p>json error</p>
-                                <%}%>
+                                    <%});%>
+                                    <%}else{%>
+                                    <p>json error</p>
+                                    <%}%>
                             </div>
                         </div>
                         <%});%>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col col-sm-3 col-3">
-                    <% var a = orderedDishes?[80,0]:[100,.4]%>
+                    <!-- ======Menu Ended====== -->
+                    <!-- ======Cart Started====== -->
+                    <div class="col col-sm-3 col-3">
+                        <% var a = orderedDishes?[80,0]:[100,.4]%>
 
-                    <div class="container-fluid"
-                        style="padding: 0 .3rem <%=a[1]%>rem;height: <%=a[0]%>vh;overflow-y: auto;overflow-x: hidden;">
-                        <h2 class="sticky-top text-center" style="background: white">Cart</h2>
-                        <% if(cartDishes){%>
-                        <% cartDishes.forEach((dish) => {%>
-                        <div class="card mb-2">
-                            <div class="row no-gutters">
-                                <div class="col-md-4" style="background-color: dimgrey;">
-                                    <!-- <img src="" class="card-img" alt=""> -->
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body" style="padding: .5rem;">
-                                        <div class="cart-dish-card-header">
-                                            <div class="cart-dish-title"><%= dish.dish.name%></div>
-                                            <p class="cart-qty">Qty. <%= dish.quantity%> x &#8377;<%= dish.dish.price%>
-                                                =
-                                                &#8377;<%= dish.price%></p>
-                                            <%if(dish.quantity>1){%>
-                                            <a href="#" data-toggle="modal" data-target="#exampleModalCenter"
-                                                style="font-size: 1.1vw;">Remove</a>
-                                            <%}else{%>
-                                            <a href="/remove/<%= dish.dish.id%>" style="font-size: 1.1vw;">Remove</a>
-                                            <%}%>
+                        <div class="container-fluid"
+                            style="padding: 0 .3rem <%=a[1]%>rem;height: <%=a[0]%>vh;overflow-y: auto;overflow-x: hidden;">
+                            <h2 class="sticky-top text-center" style="background: white">Cart</h2>
+                            <% if(cartDishes){%>
+                            <% cartDishes.forEach((dish) => {%>
+                            <div class="card mb-2">
+                                <div class="row no-gutters">
+                                    <div class="col-md-4" style="background-color: dimgrey;">
+                                        <!-- <img src="" class="card-img" alt=""> -->
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body" style="padding: .5rem;">
+                                            <div class="cart-dish-card-header">
+                                                <div class="cart-dish-title"><%= dish.dish.name%></div>
+                                                <p class="cart-qty">Qty. <%= dish.quantity%> x
+                                                    &#8377;<%= dish.dish.price%>
+                                                    =
+                                                    &#8377;<%= dish.price%></p>
+                                                <%if(dish.quantity>1){%>
+                                                <a href="#" data-toggle="modal" data-target="#exampleModalCenter"
+                                                    style="font-size: 1.1vw;">Remove</a>
+                                                <%}else{%>
+                                                <a href="/remove/<%= dish.dish.id%>"
+                                                    style="font-size: 1.1vw;">Remove</a>
+                                                <%}%>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <%if(dish.quantity>1){%>
-                                            <!-- Remove Modal -->
-                                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-                                                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                                <div class="modal-dialog modal-sm modal-dialog-centered"
-                                                    role="document">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLongTitle">Enter
-                                                                Quantity to Remove</h5>
-                                                            <button type="button" class="close" data-dismiss="modal"
-                                                                aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                            </button>
+                                                <!-- Remove Modal -->
+                                                <div class="modal fade" id="exampleModalCenter" tabindex="-1"
+                                                    role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-sm modal-dialog-centered"
+                                                        role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLongTitle">Enter
+                                                                    Quantity to Remove</h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <form action="/remove" method="POST">
+                                                                <div class="modal-body d-flex justify-content-center">
+                                                                    <input type="number" name="qty" id="removeQty"
+                                                                        value="1" min="1" max="<%= dish.quantity%>">
+                                                                    <input type="hidden" name="id"
+                                                                        value="<%= dish.dish.id%>">
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary"
+                                                                        data-dismiss="modal">Close</button>
+                                                                    <button type="submit"
+                                                                        class="btn btn-primary">Remove</button>
+                                                                    <a type="button" class="btn btn-primary"
+                                                                        href="/remove/<%= dish.dish.id%>">Remove All</a>
+                                                                </div>
+                                                            </form>
                                                         </div>
-                                                        <form action="/remove" method="POST">
-                                                            <div class="modal-body d-flex justify-content-center">
-                                                                <input type="number" name="qty" id="removeQty" value="1"
-                                                                    min="1" max="<%= dish.quantity%>">
-                                                                <input type="hidden" name="id"
-                                                                    value="<%= dish.dish.id%>">
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <button type="button" class="btn btn-secondary"
-                                                                    data-dismiss="modal">Close</button>
-                                                                <button type="submit"
-                                                                    class="btn btn-primary">Remove</button>
-                                                                <a type="button" class="btn btn-primary"
-                                                                    href="/remove/<%= dish.dish.id%>">Remove All</a>
-                                                            </div>
-                                                        </form>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <%};%>
-                                            <%});%>
-                                            <div class="cart-bottom">
-                                                <div class="row">
-                                                    <div class="col-4 cart-total-qty">
-                                                        <p>Total Qty.</p>
-                                                        <h6><%=cartTotalqty%></h6>
+                                                <%};%>
+                                                <%});%>
+                                                <div class="cart-bottom">
+                                                    <div class="row">
+                                                        <div class="col-4 cart-total-qty">
+                                                            <p>Total Qty.</p>
+                                                            <h6><%=cartTotalqty%></h6>
+                                                        </div>
+                                                        <div class="col-4 cart-total">
+                                                            <p>Cart Total</p>
+                                                            <h6>&#8377;<%=cartTotalprice%></h6>
+                                                        </div>
+                                                        <div class="col-4 cart-grand-total">
+                                                            <p>Grand Total</p>
+                                                            <h6><span>&#8377;<%=cartTotalprice%> +
+                                                                    &#8377;<%=orderedTotalprice%></span></h6>
+                                                            <h6>&#8377;<%=totalprice%></h6>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-4 cart-total">
-                                                        <p>Cart Total</p>
-                                                        <h6>&#8377;<%=cartTotalprice%></h6>
-                                                    </div>
-                                                    <div class="col-4 cart-grand-total">
-                                                        <p>Grand Total</p>
-                                                        <h6><span>&#8377;<%=cartTotalprice%> +
-                                                                &#8377;<%=orderedTotalprice%></span></h6>
-                                                        <h6>&#8377;<%=totalprice%></h6>
-                                                    </div>
+                                                    <a type="button" class="btn btn-primary btn-block"
+                                                        href="/place/order">Place
+                                                        Order</a>
                                                 </div>
-                                                <a type="button" class="btn btn-primary btn-block" href="/place/order">Place
-                                                    Order</a>
-                                            </div>
-                                            <%}%>
+                                                <%}%>
                         <%if(orderedDishes){%>
-                                            <hr>
-                                            <h3 class="sticky-top text-center" style="background: white">Ordered dishes
-                                            </h3>
-                                            <% orderedDishes.forEach((dish) => {%>
-                                            <div class="card mb-2">
-                                                <div class="card-body" style="padding: .5rem;">
-                                                    <div class="ordered-dish-card">
-                                                        <div class="cart-dish-title"><%= dish.dish.name%> <span
-                                                                class="ordered-qty">x<%= dish.quantity%></span></div>
-                                                        <div class="cart-price">&#8377;<%= dish.price%></div>
+                                                <hr>
+                                                <h3 class="sticky-top text-center" style="background: white">Ordered
+                                                    dishes
+                                                </h3>
+                                                <% orderedDishes.forEach((dish) => {%>
+                                                <div class="card mb-2">
+                                                    <div class="card-body" style="padding: .5rem;">
+                                                        <div class="ordered-dish-card">
+                                                            <div class="cart-dish-title"><%= dish.dish.name%> <span
+                                                                    class="ordered-qty">x<%= dish.quantity%></span>
+                                                            </div>
+                                                            <div class="cart-price">&#8377;<%= dish.price%></div>
+                                                        </div>
                                                     </div>
                                                 </div>
+                                                <%});%>
+                                                <%};%>
                                             </div>
-                                            <%});%>
+                                            <%if(orderedDishes){%>
+                                            <div class="container-fluid" style="padding: 0 .3rem;height: 20vh;">
+                                                <hr style="margin: 1vh 0;">
+                                                <div class="checkout-section">
+                                                    <div class="checkout-section-title">Total ordered dishes:</div>
+                                                    <div class="checkout-section-content" style="font-size: 1rem;">
+                                                        <%=orderedTotalqty%></div>
+                                                </div>
+                                                <div class="checkout-section">
+                                                    <div class="checkout-section-title">Grand Total:</div>
+                                                    <div class="checkout-section-content">&#8377;<%=orderedTotalprice%>
+                                                    </div>
+                                                </div>
+                                                <a type="button" class="btn btn-primary btn-block" href="#">Checkout</a>
+                                            </div>
                                             <%};%>
                                         </div>
-                                        <%if(orderedDishes){%>
-                                        <div class="container-fluid" style="padding: 0 .3rem;height: 20vh;">
-                                            <hr style="margin: 1vh 0;">
-                                            <div class="checkout-section">
-                                                <div class="checkout-section-title">Total ordered dishes:</div>
-                                                <div class="checkout-section-content" style="font-size: 1rem;">
-                                                    <%=orderedTotalqty%></div>
-                                            </div>
-                                            <div class="checkout-section">
-                                                <div class="checkout-section-title">Grand Total:</div>
-                                                <div class="checkout-section-content">&#8377;<%=orderedTotalprice%>
-                                                </div>
-                                            </div>
-                                            <a type="button" class="btn btn-primary btn-block" href="#">Checkout</a>
-                                        </div>
-                                        <%};%>
                                     </div>
                                 </div>
-                            </div>
-                            <script>
-                                $(document).ready(function(){
-                                    window.location.hash = "<%- activeCategory.toString() %>"
-                                });
-                            </script>
-                            <%- include('partials/footer'); -%>
+                                <!-- ======Cart Ended====== -->
+                                <script src="/socket.io/socket.io.js"></script>
+                                <script>
+                                    const socket = io();
+                                    $(document).ready(function () {
+                                        window.location.hash = "<%- activeCategory.toString() %>"
+                                    });
+                                </script>
+                                <%- include('partials/footer'); -%>

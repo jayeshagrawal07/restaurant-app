@@ -16,6 +16,7 @@ module.exports = function Cart(cart) {
         if (!cartDish) {
             cartDish = this.dishes[id] = {
                 dish: dish,
+                status: null,
                 quantity: 0,
                 price: 0
             };

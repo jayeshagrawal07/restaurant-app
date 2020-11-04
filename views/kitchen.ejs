@@ -1,0 +1,44 @@
+<%- include('partials/header'); -%>
+<script src="/ejs.min.js" ></script>
+</head>
+
+<body>
+    <style>
+        .row {
+            margin: 0px;
+        }
+
+        .col-3 {
+            height: 100vh;
+            padding: 6px;
+            border-right: 2px solid black;
+        }
+
+        .cart-dish-title {
+            display: inline;
+
+        }
+
+        .btn {
+            float: right;
+        }
+
+        .btn {
+            margin: auto;
+        }
+
+        .card,
+        .empty-card {
+            min-width: 32%;
+            width: 32%;
+        }
+    </style>
+    <div id="output"></div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+
+        var orders = [<%- orders %>];
+    </script>
+   <script src="/javascripts/kitchenscript.js"></script>
+    <%- include('partials/footer'); -%>

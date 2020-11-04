@@ -1,3 +1,27 @@
 body-parser express=session serve-favicon
 
 font size 1.159vw;
+
+const fs = require('fs');
+
+let student = { 
+    name: 'Mike',
+    age: 23, 
+    gender: 'Male',
+    department: 'English',
+    car: 'Honda' 
+};
+ 
+let data = JSON.stringify(student);
+fs.writeFileSync('student-2.json', data);
+
+green dot
+
+<span style="
+    width: 20px;
+    height: 20px;
+    background-color: lime;
+    float: right;
+    border-radius: 50%;
+    visibility: hidden;
+"></span>
