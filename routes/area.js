@@ -30,11 +30,33 @@ router.get('/kitchen', function (req, res, next) {
       orders
     });
   });
+});
 
-  // res.render('kitchen',{title: 'Kitchen',
-  // activeCategory: req.session.activeCategory});
-  // console.log(req.session.data);
-  // res.render('j')
+router.get("/post-received/:table", function (req, res){
+  var table = req.params.table;
+  Order.findOne({name: table}, function(err, order){
+    if(order){
+      if(order.accepted){
+        var received = JSON.parse(order.received);
+        var accepted = JSON.parse(order.accepted);
+        for(id in received){
+          if(accepted[id]){
+            accepted[id].quantity += received[id].quantity;
+            accepted[id].price += received[id].price;
+          }else{
+            accepted[id] = JSON.parse(JSON.stringify(received[id]));
+          }
+        }
+        order.accepted = JSON.stringify(accepted);
+        order.received = "";
+      }else{
+        order.accepted = order.received;
+        order.received = "";
+      }
+      order.save();
+      res.redirect(`/area/kitchen?table=${order.name}&accepted=true`)
+    }
+  });
 });
 
 module.exports = router;

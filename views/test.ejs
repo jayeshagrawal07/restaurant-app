@@ -15,12 +15,12 @@
                     <div class="tab-pane fade show active" id="nav-received-<%= data.name %>" role="tabpanel"
                         aria-labelledby="nav-received-<%= data.name %>-tab">
                         <div id="received-<%= data.name %>" class="d-flex flex-wrap justify-content-between">
-                            <% for(dish in received){ %>
+                            <% for(dish in data.received){ %>
                             <div class="card mb-2">
                                 <div class="card-body" style="padding: .5rem;">
                                     <div class="ordered-dish-card">
-                                        <div class="cart-dish-title"><%= received[dish].dish.name %> <span
-                                            class="ordered-qty">x<%= received[dish].quantity %></span>
+                                        <div class="cart-dish-title"><%= data.received[dish].dish.name %> <span
+                                            class="ordered-qty">x<%= data.received[dish].quantity %></span>
                                     </div>
                                     </div>
                                 </div>
@@ -51,5 +51,3 @@
 
                 </div>
             </div>
-            
-            <%});%>

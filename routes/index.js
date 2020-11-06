@@ -12,6 +12,7 @@ const orderSchema = new mongoose.Schema({
   name: String,
   received: String,
   accepted: String,
+  prepared: String,
   delivered: String
 });
 
@@ -95,25 +96,30 @@ router.get('/place/order', function (req, res, next) {
   var temp = JSON.stringify(cart.dishes);
   Order.findOne({name: cart.table}, function(err, order){
     if(order){
-      var orderedDishesDb = JSON.parse(order.received);
-      var tempobj = JSON.parse(temp);
-
-      for(id in tempobj){
-        if(orderedDishesDb[id]){
-          orderedDishesDb[id].quantity += tempobj[id].quantity
-          orderedDishesDb[id].price += tempobj[id].price
-        }else{
-          orderedDishesDb[id] = JSON.parse(JSON.stringify(tempobj[id]));
+      if(order.received){
+        var orderedDishesDb = JSON.parse(order.received);
+        var tempobj = JSON.parse(temp);
+        for(id in tempobj){
+          if(orderedDishesDb[id]){
+            orderedDishesDb[id].quantity += tempobj[id].quantity
+            orderedDishesDb[id].price += tempobj[id].price
+          }else{
+            orderedDishesDb[id] = JSON.parse(JSON.stringify(tempobj[id]));
+          }
         }
+        order.received = JSON.stringify(orderedDishesDb);
+        res.io.emit("order", {name: order.name,received: orderedDishesDb});
+      }else{
+        order.received = temp;
+        res.io.emit("order", {name: order.name,received: JSON.parse(order.received)});
       }
-      order.received = JSON.stringify(orderedDishesDb);
       order.save();
-      res.io.emit("order", {name: order.name,received: orderedDishesDb});
     }else{
       const order = new Order({
         name: cart.table,
         received: temp,
         accepted: "",
+        prepared: "",
         delivered: ""
       });
       order.save();

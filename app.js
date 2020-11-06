@@ -35,7 +35,7 @@ app.use(cookieParser());
 app.use(sessionMiddleware)
 app.use(express.static(path.join(__dirname, 'public')));
 
-mongoose.connect("mongodb://localhost:27017/Restaurant2DB", {
+mongoose.connect("mongodb://localhost:27017/RestaurantDB", {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });

@@ -53,7 +53,7 @@ var innital = function(){   var toRender = `<div class="row">
                                     <%}%>
                             </div>
                             <% if(received){ %> 
-                                <button class="btn">Accept</button>
+                                <a type="button" id="accept-btn-<%= order.name %>" href="/area/post-received/<%= order.name %>" class="btn btn-light">Accept</a>
                                 <% } %>
                         </div>
 
@@ -87,13 +87,13 @@ var innital = function(){   var toRender = `<div class="row">
                             aria-labelledby="nav-prepared-<%= order.name %>-tab">
                             <div class="d-flex flex-wrap justify-content-between">
 
-                                <% var preparing = order.accepted ? JSON.parse(order.accepted) : "" ;%>
-                                <% if(preparing){for(dish in preparing){ %>
+                                <% var prepared = order.prepared ? JSON.parse(order.prepared) : "" ;%>
+                                <% if(prepared){for(dish in prepared){ %>
                                 <div class="card mb-2">
                                     <div class="card-body" style="padding: .5rem;">
                                         <div class="ordered-dish-card">
-                                            <div class="cart-dish-title"><%= preparing[dish].dish.name %> <span
-                                                class="ordered-qty">x<%= preparing[dish].quantity %></span>
+                                            <div class="cart-dish-title"><%= prepared[dish].dish.name %> <span
+                                                class="ordered-qty">x<%= prepared[dish].quantity %></span>
                                         </div>
                                         </div>
                                     </div>
@@ -151,12 +151,15 @@ socket.on("order", function (data) {
         data
     });
     document.getElementById(`received-${data.name}`).innerHTML = renderedOrder;
+    if(!document.getElementById(`accept-btn--${data.name}`)){
+        document.getElementById(`nav-received-${data.name}`).innerHTML += `<a type="button" id="accept-btn-${data.name}" href="/area/post-received/${data.name}" class="btn btn-light">Accept</a>`
+    }
 });
 
 socket.on("newOrder", function (data) {
     if (!document.getElementById(`orderSection`)) {
         orders = [{name: data.name,received: JSON.stringify(data.received)}];
-innital();
+        innital();
     } else {
         var toRenderNewOrderTable = `<a class="nav-link" id="v-pills-<%= data.name %>-tab" data-toggle="pill" href="#v-pills-<%= data.name %>" role="tab"
     aria-controls="v-pills-<%= data.name %>" aria-selected="false"><%= data.name %></a>`;
@@ -193,7 +196,7 @@ innital();
                     </div>
                 </div>
             </div>
-                <button class="btn">Accept</button>
+                <<a type="button" id="accept-btn-<%= data.name %>" href="/area/post-received/<%= data.name %>" class="btn btn-light">Accept</a>
         </div>
 
         <div class="tab-pane fade" id="nav-preparing-<%= data.name %>" role="tabpanel"
@@ -223,3 +226,14 @@ innital();
         document.getElementById(`orderSection`).innerHTML += renderedNewOrder;
     }
 });
+var toChangePointer = function(){
+    var url_string = window.location.href;
+    var url = new URL(url_string);
+    var accepted = url.searchParams.get("accepted");
+    var table = url.searchParams.get("table");
+
+    if(accepted){
+        document.getElementById(`v-pills-${table}-tab`).click()
+        document.getElementById(`nav-preparing-${table}-tab`).click()
+    }
+}

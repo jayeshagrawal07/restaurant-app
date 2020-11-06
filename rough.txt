@@ -25,3 +25,10 @@ green dot
     border-radius: 50%;
     visibility: hidden;
 "></span>
+
+document.getElementById("v-pills-Table1-tab").click()
+document.getElementById("nav-preparing-Table1-tab").click()
+
+var url_string = window.location.href;
+var url = new URL(url_string);
+var c = url.searchParams.get("as");
