@@ -32,3 +32,5 @@ document.getElementById("nav-preparing-Table1-tab").click()
 var url_string = window.location.href;
 var url = new URL(url_string);
 var c = url.searchParams.get("as");
+
+background: linear-gradient(to bottom, #FABD02 0%, rgba(0,0,0, 0) 100%);

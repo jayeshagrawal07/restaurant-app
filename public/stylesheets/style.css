@@ -6,6 +6,17 @@ body {
   padding: 0;
 }
 
+.btn-red{
+  background: #7b1424;
+  border: #7b1424;
+  color: #ffffff;
+}
+.btn-red:hover:focus:active{
+  background: #dc2944;
+  border: #dc2944;
+  color: #ffffff;
+}
+
 /* .category-section {
   
 } */
@@ -25,14 +36,14 @@ body {
 
 /* change the link color and add padding for height */
 .nav .nav-item .nav-link {
-  color: red;
+  color: #dc2944;
 }
 
 /* change the color of active or hovered links */
 .nav .nav-item .nav-link.active,
 .nav .nav-item:hover:focus:active .nav-link {
   color: #ffffff;
-  background: linear-gradient(to top, #33ccff 0%, #ff99cc 100%);
+  background: linear-gradient(to left, #dc2944 0%, #ffffff 100%);;
 }
 
 /* nav style end */
@@ -41,7 +52,7 @@ ul.nav-pills {
   top: 1px;
   width: 24.95vw;
   position: fixed;
-  height: 90vh;
+  height: 99vh;
   align-items: center;
   overflow-y: auto;
 }
@@ -79,7 +90,20 @@ ul li {
 .section-heading {
   padding: 5px 15px;
   margin: 0;
-  background-color: coral;
+  /*background-color: rgb(0,0,0); /* Fallback color */
+  /*background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  background: linear-gradient(to bottom, #dc2944 0%, #7b1424ad 100%);;;
+  color: white;
+  /* font-weight: bold; */
+  /* border: 3px solid #f1f1f1; */
+  /* position: absolute; */
+  /* top: 50%; */
+  /* left: 50%; */
+  /* transform: translate(-50%, -50%); */
+  z-index: 2;
+  /* width: 80%; */
+  /* padding: 20px; */
+  /* text-align: center; */
 }
 
 

@@ -1,38 +1,52 @@
 <%- include('partials/header'); -%>
 <script src="/ejs.min.js" ></script>
+<style>
+    .row {
+        margin: 0px;
+    }
+
+    .col-3 {
+        height: 100vh;
+        padding: 6px;
+        border-right: 2px solid black;
+    }
+
+    .cart-dish-title {
+        display: inline;
+
+    }
+
+    .btn {
+        float: right;
+    }
+
+    .btn {
+        margin: auto;
+    }
+
+    .card,
+    .empty-card {
+        min-width: 32%;
+        width: 32%;
+    }
+
+    .nav .nav-link {
+  color: #dc2944;
+}
+/* .nav .nav-item.active,
+.nav .nav-item:hover:focus:active {
+  color: #ffffff;
+  background: linear-gradient(to left, #dc2944 0%, #ffffff 100%);;
+} */
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    background: #7b1424;
+  border: #7b1424;
+  color: #ffffff;
+}
+</style>
 </head>
 
 <body onload="toChangePointer()">
-    <style>
-        .row {
-            margin: 0px;
-        }
-
-        .col-3 {
-            height: 100vh;
-            padding: 6px;
-            border-right: 2px solid black;
-        }
-
-        .cart-dish-title {
-            display: inline;
-
-        }
-
-        .btn {
-            float: right;
-        }
-
-        .btn {
-            margin: auto;
-        }
-
-        .card,
-        .empty-card {
-            min-width: 32%;
-            width: 32%;
-        }
-    </style>
     <div id="output"></div>
     <script src="/socket.io/socket.io.js"></script>
     <script>
