@@ -169,7 +169,8 @@
                                                 <%}%>
                         <%if(orderedDishes){%>
                                                 <hr>
-                                                <h3 class="sticky-top text-center" style="background: white">Ordered
+                                                <h3 class="sticky-top text-center" style="background: white;font-family: 'Kalam';
+                                                font-weight: bold;">Ordered
                                                     dishes
                                                 </h3>
                                                 <% orderedDishes.forEach((dish) => {%>
@@ -199,7 +200,7 @@
                                                     <div class="checkout-section-content">&#8377;<%=orderedTotalprice%>
                                                     </div>
                                                 </div>
-                                                <a type="button" class="btn btn-red btn-block" href="#">Checkout</a>
+                                                <a type="button" class="btn btn-red btn-block" href="/area/bill">Checkout</a>
                                             </div>
                                             <%};%>
                                         </div>

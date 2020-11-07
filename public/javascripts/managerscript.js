@@ -22,8 +22,8 @@ var innital = function(){   var toRender = `<div class="row">
                                 role="tab" aria-controls="nav-received-<%= order.name %>" aria-selected="true">Received</a>
                             <a class="nav-item nav-link" id="nav-preparing-<%= order.name %>-tab" data-toggle="tab" href="#nav-preparing-<%= order.name %>"
                                 role="tab" aria-controls="nav-preparing-<%= order.name %>" aria-selected="false">Preparing</a>
-                            <a class="nav-item nav-link" id="nav-prepared-<%= order.name %>-tab" data-toggle="tab" href="#nav-prepared-<%= order.name %>"
-                                role="tab" aria-controls="nav-prepared-<%= order.name %>" aria-selected="false">Prepared</a>
+                            <a class="nav-item nav-link" id="nav-delivered-<%= order.name %>-tab" data-toggle="tab" href="#nav-delivered-<%= order.name %>"
+                                role="tab" aria-controls="nav-delivered-<%= order.name %>" aria-selected="false">Delivered</a>
                         </div>
                     </nav>
                     <div class="tab-content" id="nav-tabContent">
@@ -53,7 +53,7 @@ var innital = function(){   var toRender = `<div class="row">
                                     <%}%>
                             </div>
                             <% if(received){ %> 
-                                <a type="button" id="accept-btn-<%= order.name %>" href="/area/post-received/<%= order.name %>" class="btn btn-light">Accept</a>
+                                <a type="button" id="accept-btn-<%= order.name %>" href="/area/post-received/<%= order.name %>" class="btn btn-red">Accept</a>
                                 <% } %>
                         </div>
 
@@ -82,18 +82,21 @@ var innital = function(){   var toRender = `<div class="row">
                                     <h1>No Order Preparing</h1>
                                     <%}%>
                             </div>
+                            <% if(preparing){ %> 
+                                <a type="button" id="delivered-btn-<%= order.name %>" href="/area/post-delivered/<%= order.name %>" class="btn btn-red">Deliver</a>
+                                <% } %>
                         </div>
-                        <div class="tab-pane fade" id="nav-prepared-<%= order.name %>" role="tabpanel"
-                            aria-labelledby="nav-prepared-<%= order.name %>-tab">
+                        <div class="tab-pane fade" id="nav-delivered-<%= order.name %>" role="tabpanel"
+                            aria-labelledby="nav-delivered-<%= order.name %>-tab">
                             <div class="d-flex flex-wrap justify-content-between">
 
-                                <% var prepared = order.prepared ? JSON.parse(order.prepared) : "" ;%>
-                                <% if(prepared){for(dish in prepared){ %>
+                                <% var delivered = order.delivered ? JSON.parse(order.delivered) : "" ;%>
+                                <% if(delivered){for(dish in delivered){ %>
                                 <div class="card mb-2">
                                     <div class="card-body" style="padding: .5rem;">
                                         <div class="ordered-dish-card">
-                                            <div class="cart-dish-title"><%= prepared[dish].dish.name %> <span
-                                                class="ordered-qty">x<%= prepared[dish].quantity %></span>
+                                            <div class="cart-dish-title"><%= delivered[dish].dish.name %> <span
+                                                class="ordered-qty">x<%= delivered[dish].quantity %></span>
                                         </div>
                                         </div>
                                     </div>
@@ -105,7 +108,7 @@ var innital = function(){   var toRender = `<div class="row">
                                     </div>
                                 </div>
                                 <%}else{%>
-                                    <h1>No Order Prepared</h1>
+                                    <h1>No Order Delivered</h1>
                                     <%}%>
                             </div>
                         </div>
@@ -151,8 +154,8 @@ socket.on("order", function (data) {
         data
     });
     document.getElementById(`received-${data.name}`).innerHTML = renderedOrder;
-    if(!document.getElementById(`accept-btn--${data.name}`)){
-        document.getElementById(`nav-received-${data.name}`).innerHTML += `<a type="button" id="accept-btn-${data.name}" href="/area/post-received/${data.name}" class="btn btn-light">Accept</a>`
+    if(!document.getElementById(`accept-btn-${data.name}`)){
+        document.getElementById(`nav-received-${data.name}`).innerHTML += `<a type="button" id="accept-btn-${data.name}" href="/area/post-received/${data.name}" class="btn btn-red">Accept</a>`
     }
 });
 
@@ -171,8 +174,8 @@ socket.on("newOrder", function (data) {
                 role="tab" aria-controls="nav-received-<%= data.name %>" aria-selected="true">Received</a>
             <a class="nav-item nav-link" id="nav-preparing-<%= data.name %>-tab" data-toggle="tab" href="#nav-preparing-<%= data.name %>"
                 role="tab" aria-controls="nav-preparing-<%= data.name %>" aria-selected="false">Preparing</a>
-            <a class="nav-item nav-link" id="nav-prepared-<%= data.name %>-tab" data-toggle="tab" href="#nav-prepared-<%= data.name %>"
-                role="tab" aria-controls="nav-prepared-<%= data.name %>" aria-selected="false">Prepared</a>
+            <a class="nav-item nav-link" id="nav-delivered-<%= data.name %>-tab" data-toggle="tab" href="#nav-delivered-<%= data.name %>"
+                role="tab" aria-controls="nav-delivered-<%= data.name %>" aria-selected="false">Delivered</a>
         </div>
     </nav>
     <div class="tab-content" id="nav-tabContent">
@@ -196,7 +199,7 @@ socket.on("newOrder", function (data) {
                     </div>
                 </div>
             </div>
-                <<a type="button" id="accept-btn-<%= data.name %>" href="/area/post-received/<%= data.name %>" class="btn btn-light">Accept</a>
+                <a type="button" id="accept-btn-<%= data.name %>" href="/area/post-received/<%= data.name %>" class="btn btn-red">Accept</a>
         </div>
 
         <div class="tab-pane fade" id="nav-preparing-<%= data.name %>" role="tabpanel"
@@ -205,11 +208,11 @@ socket.on("newOrder", function (data) {
                     <h1>No Order Preparing</h1>
             </div>
         </div>
-        <div class="tab-pane fade" id="nav-prepared-<%= data.name %>" role="tabpanel"
-            aria-labelledby="nav-prepared-<%= data.name %>-tab">
+        <div class="tab-pane fade" id="nav-delivered-<%= data.name %>" role="tabpanel"
+            aria-labelledby="nav-delivered-<%= data.name %>-tab">
             <div class="d-flex flex-wrap justify-content-between">
 
-                    <h1>No Order Prepared</h1>
+                    <h1>No Order Delivered</h1>
             </div>
         </div>
 
@@ -230,10 +233,16 @@ var toChangePointer = function(){
     var url_string = window.location.href;
     var url = new URL(url_string);
     var accepted = url.searchParams.get("accepted");
+    var delivered = url.searchParams.get("delivered");
     var table = url.searchParams.get("table");
 
     if(accepted){
         document.getElementById(`v-pills-${table}-tab`).click()
         document.getElementById(`nav-preparing-${table}-tab`).click()
+    }
+    if(delivered){
+        document.getElementById(`v-pills-${table}-tab`).click()
+        document.getElementById(`nav-delivered-${table}-tab`).click()
+
     }
 }
