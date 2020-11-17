@@ -20,10 +20,10 @@ green dot
 <span style="
     width: 20px;
     height: 20px;
-    background-color: lime;
+    background-color: #fffff;
     float: right;
     border-radius: 50%;
-    visibility: hidden;
+    /*visibility: hidden;*/
 "></span>
 
 document.getElementById("v-pills-Table1-tab").click()

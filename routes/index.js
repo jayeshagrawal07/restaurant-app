@@ -12,7 +12,7 @@ const orderSchema = new mongoose.Schema({
   name: String,
   received: String,
   accepted: String,
-  prepared: String,
+  checkout: String,
   delivered: String
 });
 
@@ -23,6 +23,8 @@ router.get('/favicon.ico', (req, res) => {
 })
 
 router.get('/:table', function (req, res, next) {
+  console.log(req.session);
+  if(req.session.checkout){return res.redirect('/area/bill')}
   if(!req.session.table){req.session.table = req.params.table;}
   if(!req.session.activeCategory){req.session.activeCategory = "";}
   if (!req.session.cart) {
@@ -41,7 +43,6 @@ router.get('/:table', function (req, res, next) {
     });
   }
   var cart = new Cart(req.session.cart);
-  var order = (cart.orderedDishes) ? cart.orderedDishes : null;
   res.render('menu', {
     title: 'Menu',
     menu,

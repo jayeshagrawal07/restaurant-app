@@ -1,5 +1,6 @@
 <%- include('partials/header'); -%>
 <script src="/ejs.min.js" ></script>
+<link rel='stylesheet' type='text/css' href='/stylesheets/bill-style.css' />
 <style>
     .row {
         margin: 0px;
@@ -42,6 +43,13 @@
     background: #7b1424;
   border: #7b1424;
   color: #ffffff;
+}
+
+@media (min-width: 576px){
+	.modal-dialog {
+		max-width: 900px;
+		margin: 1.75rem auto;
+	}
 }
 </style>
 </head>

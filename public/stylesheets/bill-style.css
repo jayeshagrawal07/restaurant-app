@@ -1,8 +1,7 @@
 * { margin: 0; padding: 0; }
-body { font: 14px/1.4 Georgia, serif;-webkit-print-color-adjust: exact; }
-#page-wrap { width: 800px; margin: 0 auto; }
+#page-wrap { font: 14px/1.4 Georgia, serif;-webkit-print-color-adjust: exact;width: 800px; margin: 0 auto; }
 
-div { border: 0; font: 14px Georgia, Serif; overflow: hidden; resize: none; }
+.divClass { border: 0; font: 14px Georgia, Serif; overflow: hidden; resize: none; }
 table { border-collapse: collapse; }
 table td, table th { border: 1px solid black; padding: 5px; }
 
@@ -50,3 +49,17 @@ table td, table th { border: 1px solid black; padding: 5px; }
 
 .delete-wpr { position: relative; }
 .delete { display: block; color: #000; text-decoration: none; position: absolute; background: #EEEEEE; font-weight: bold; padding: 0px 3px; border: 1px solid; top: -6px; left: -22px; font-family: Verdana; font-size: 12px; }
+
+@media print {
+    body * {
+      visibility: hidden;
+    }
+    #page-wrap, #page-wrap * {
+      visibility: visible;
+    }
+    #page-wrap {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }

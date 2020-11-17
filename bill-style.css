@@ -2,7 +2,7 @@
 body { font: 14px/1.4 Georgia, serif;-webkit-print-color-adjust: exact; }
 #page-wrap { width: 800px; margin: 0 auto; }
 
-div { border: 0; font: 14px Georgia, Serif; overflow: hidden; resize: none; }
+div.divClass { border: 0; font: 14px Georgia, Serif; overflow: hidden; resize: none; }
 table { border-collapse: collapse; }
 table td, table th { border: 1px solid black; padding: 5px; }
 

@@ -7,27 +7,8 @@ var Cart = require('../models/cart');
 
 var menu = JSON.parse(fs.readFileSync('./data/menu.json', 'utf8'));
 
-// const orderSchema = new mongoose.Schema({
-//   name: String,
-//   received: String,
-//   accepted: String,
-//   delivered: String
-// });
-
 const Order = mongoose.model("Order");
-
-/* GET users listing. */
 router.get('/manager', function (req, res, next) {
-  // res.io.on("socketToMe", data => {
-  //   console.log(data);
-  //   req.session.data = data;
-  //   // res.send('respond with a resource ' + data);
-  // });
-  // res.send('respond');
-  // if (!req.session.activeCategory) {
-  //   req.session.activeCategory = "";activeCategory: req.session.activeCategory,
-  // }
-
   Order.find({}, '-_id', function (err, orders) {
     // console.log(orders);
     res.render('manager', {
@@ -96,27 +77,37 @@ router.get("/post-delivered/:table", function (req, res) {
 });
 
 router.get("/bill", function (req, res) {
-  var table = req.session.table;
   var cart = req.session.cart ? new Cart(req.session.cart):null;
   if (cart && cart.getOrder()) {
+    if(!req.session.billno){
+      req.session.billno = ++menu.billno;
+      fs.writeFileSync('./data/menu.json',JSON.stringify(menu))}
     var options = {
       year: 'numeric',
       month: 'long',
       day: 'numeric'
     };
     var today = new Date();
-    res.render('bill', {
+    req.session.checkout = true;
+    req.session.save();
+    var checkoutObj = {
       title: 'Bill',
-      table,
+      table: req.session.table,
       orders: cart.getOrder(),
       amount: cart.orderedTotalPrice,
       date: today.toLocaleDateString("en-US", options),
-      billno: ++menu.billno
+      billno: req.session.billno
+    }
+    Order.findOne({name: cart.table}, function(err, order){
+      if(order){
+        order.checkout = JSON.stringify(checkoutObj);
+        order.save();
+      }
     });
-      req.session.activeCategory = null;
-      req.session.cart = null;
+    res.io.emit("bill", {...checkoutObj});
+    res.render('bill', {...checkoutObj});
   }else{
-    res.redirect(`/${table}`);
+    res.redirect(`/${req.session.table}`);
   }
 });
 
