@@ -8,6 +8,17 @@ var Cart = require('../models/cart');
 var menu = JSON.parse(fs.readFileSync('./data/menu.json', 'utf8'));
 
 const Order = mongoose.model("Order");
+
+const billSchema = new mongoose.Schema({
+  table: String,
+  orders: Array,
+  amount: Number,
+  date: Date,
+  billno: Number
+});
+
+const Bill = mongoose.model("Bill", billSchema);
+
 router.get('/manager', function (req, res, next) {
   Order.find({}, '-_id', function (err, orders) {
     // console.log(orders);
@@ -85,7 +96,8 @@ router.get("/bill", function (req, res) {
     var options = {
       year: 'numeric',
       month: 'long',
-      day: 'numeric'
+      day: 'numeric',
+      timeZone: "Asia/Kolkata"
     };
     var today = new Date();
     req.session.checkout = true;
@@ -100,7 +112,7 @@ router.get("/bill", function (req, res) {
     }
     Order.findOne({name: cart.table}, function(err, order){
       if(order){
-        order.checkout = JSON.stringify(checkoutObj);
+        order.checkout = JSON.stringify({...checkoutObj,jsDate: today});
         order.save();
       }
     });
@@ -116,6 +128,16 @@ router.get("/paid/:table", function (req, res) {
   Order.findOneAndDelete({name: table},function(err, order){
     if(err){
       console.log(err);
+    }else{
+      const bill = new Bill({
+        table: table,
+        orders: JSON.parse(order.checkout).orders,
+        amount: JSON.parse(order.checkout).amount,
+        date: JSON.parse(order.checkout).jsDate,
+        billno: JSON.parse(order.checkout).billno
+      });
+      bill.save();
+      // console.log(order);
     }
   });
   res.io.emit(`distroy-${table}`,{});
