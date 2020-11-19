@@ -23,15 +23,16 @@ router.get('/favicon.ico', (req, res) => {
 })
 
 router.get('/:table', function (req, res, next) {
-  console.log(req.session);
   if(req.session.checkout){return res.redirect('/area/bill')}
   if(!req.session.table){req.session.table = req.params.table;}
   if(!req.session.activeCategory){req.session.activeCategory = "";}
+  if(!req.session.clickCategory){req.session.clickCategory = "";}
   if (!req.session.cart) {
     return res.render('menu', {
       title: 'Menu',
       menu,
       activeCategory: req.session.activeCategory,
+      clickCategory: req.session.clickCategory,
       cartDishes: null,
       cartTotalprice: 0,
       cartTotalqty: 0,
@@ -47,6 +48,7 @@ router.get('/:table', function (req, res, next) {
     title: 'Menu',
     menu,
     activeCategory: req.session.activeCategory,
+    clickCategory: req.session.clickCategory,
     cartDishes: cart.getDishes(),
     cartTotalprice: cart.cartTotalPrice,
     cartTotalqty: cart.cartTotalDishes,
@@ -69,25 +71,30 @@ router.post('/add', function (req, res, next) {
   });
   cart.add(dish[0], qty, dishId);
   req.session.cart = cart;
+  req.session.clickCategory = categoryId;
   req.session.activeCategory = dishId;
   res.redirect(`/${cart.table}`);
 });
 
-router.get('/remove/:id', function (req, res, next) {
+router.get('/remove/:id/:cid', function (req, res, next) {
+  var categoryId = req.params.cid;
   var dishId = req.params.id;
   var cart = new Cart(req.session.cart ? req.session.cart : {});
   cart.removeAll(dishId);
   req.session.cart = cart;
+  req.session.clickCategory = categoryId;
   req.session.activeCategory = dishId;
   res.redirect(`/${cart.table}`);
 });
 
 router.post('/remove', function (req, res, next) {
+  var categoryId = req.body.cid;
   var dishId = req.body.id;
   var qty = req.body.qty;
   var cart = new Cart(req.session.cart ? req.session.cart : {});
   cart.remove(dishId, qty);
   req.session.cart = cart;
+  req.session.clickCategory = categoryId;
   req.session.activeCategory = dishId;
   res.redirect(`/${cart.table}`);
 });
@@ -131,6 +138,7 @@ router.get('/place/order', function (req, res, next) {
     cart.order();
   }
   req.session.cart = cart;
+  req.session.clickCategory = "";
   req.session.activeCategory = "";
   res.redirect(`/${cart.table}`);
 });
@@ -140,6 +148,7 @@ router.get('/distroy/:table', function (req, res, next) {
   req.session.cart = "";
   req.session.checkout = false;
   req.session.activeCategory = "";
+  req.session.clickCategory = "";
   req.session.save();
   res.redirect(`/${req.session.table}`)
 });

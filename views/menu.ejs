@@ -2,7 +2,7 @@
 <link href='https://fonts.googleapis.com/css?family=Kalam' rel='stylesheet'>
 </head>
 
-<body>
+<body onload="whereToClick()">
     <div class="container-fluid">
         <div class="row">
             <div class="col col-sm-9 col-9" data-spy="scroll" data-target="#myScrollspy"
@@ -16,7 +16,7 @@
                                 font-weight: bold;">Category</h2>
                                 <%menu.category.forEach( function(category,i) {%>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#<%= category.id %>"><%= category.name %></a>
+                                    <a  id="ct-<%= category.id %>" class="nav-link" href="#<%= category.id %>"><%= category.name %></a>
                                 </li>
                                 <%});%>
                             </ul>
@@ -107,7 +107,8 @@
                                                 <a href="#" data-toggle="modal" data-target="#exampleModalCenter"
                                                     style="font-size: 1.1vw; color:#7b1424">Remove</a>
                                                 <%}else{%>
-                                                <a href="/remove/<%= dish.dish.id%>"
+                                                    <% var cid = dish.dish.id.split("_");cid.pop();cid=cid.join("_")%>
+                                                <a href="/remove/<%= dish.dish.id%>/<%= cid %>"
                                                     style="font-size: 1.1vw; color:#7b1424">Remove</a>
                                                 <%}%>
                                         </div>
@@ -137,6 +138,9 @@
                                                                         value="1" min="1" max="<%= dish.quantity%>">
                                                                     <input type="hidden" name="id"
                                                                         value="<%= dish.dish.id%>">
+                                                                        <% var cid = dish.dish.id.split("_");cid.pop();cid=cid.join("_")%>
+                                                                    <input type="hidden" name="cid"
+                                                                        value="<%= cid%>">
                                                                 </div>
                                                                 <div class="modal-footer">
                                                                     <button type="button" class="btn btn-secondary"
@@ -144,7 +148,7 @@
                                                                     <button type="submit"
                                                                         class="btn btn-red">Remove</button>
                                                                     <a type="button" class="btn btn-red"
-                                                                        href="/remove/<%= dish.dish.id%>">Remove All</a>
+                                                                        href="/remove/<%= dish.dish.id%>/<%= cid %>">Remove All</a>
                                                                 </div>
                                                             </form>
                                                         </div>
@@ -245,8 +249,15 @@
                                 <script src="/socket.io/socket.io.js"></script>
                                 <script>
                                     const socket = io();
-                                    $(document).ready(function () {
-                                        window.location.hash = "<%- activeCategory.toString() %>"
-                                    });
+                                    var whereToClick = function () {
+                                        if("<%- clickCategory %>"){
+                                            setTimeout(function(){
+                                                document.getElementById("ct-<%- clickCategory %>").click();
+                                                setTimeout(function(){ window.location.hash = "<%- activeCategory.toString() %>"; }, 0);
+                                            }, -1);
+                                        }else{
+                                            window.location.hash = "<%- activeCategory.toString() %>"
+                                        }
+                                    }
                                 </script>
                                 <%- include('partials/footer'); -%>
