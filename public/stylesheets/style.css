@@ -184,3 +184,9 @@ ul li {
   font-size: 1.3rem;
   font-weight: 600;
 }
+
+.imgbg{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

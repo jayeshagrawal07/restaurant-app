@@ -36,7 +36,10 @@
                                     top: -6vh;"></span>
                                         <div class="row no-gutters">
                                             <div class="col-md-4 bg-secondary"
-                                                style="background: url(<%= dish.image %>);">
+                                                style="background: url(<%= dish.image %>);
+                                                background-position: center;
+                                    background-repeat: no-repeat;
+                                    background-size: cover;">
                                                 <!-- <img src="images/123.png" class="card-img" alt=""> -->
                                             </div>
                                             <div class="col-md-8">
@@ -85,7 +88,11 @@
                             <% cartDishes.forEach((dish) => {%>
                             <div class="card mb-2">
                                 <div class="row no-gutters">
-                                    <div class="col-md-4" style="background: url(<%= dish.dish.image %>);">
+                                    <div class="col-md-4" style="
+                                    background: url(<%= dish.dish.image %>);
+                                    background-position: center;
+                                    background-repeat: no-repeat;
+                                    background-size: cover;">
                                         <!-- <img src="" class="card-img" alt=""> -->
                                     </div>
                                     <div class="col-md-8">
@@ -200,7 +207,35 @@
                                                     <div class="checkout-section-content">&#8377;<%=orderedTotalprice%>
                                                     </div>
                                                 </div>
-                                                <a type="button" class="btn btn-red btn-block" href="/area/bill">Checkout</a>
+                                                <!-- <a type="button" class="btn btn-red btn-block" href="/area/bill">Checkout</a> -->
+                                                <button type="button" class="btn btn-red btn-block" data-toggle="modal" data-target="#checkoutModal">Checkout</button>
+  
+                                                <!-- Modal -->
+                                                
+                                                <div class="modal fade" id="checkoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLongTitle">Checkout</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <% if(cartDishes){%>
+                                                                Your cart is not empty<br>do you still want to Checkout?
+                                                            <%}else{%>
+                                                                After checkout you will unable to order until you pay the bill.
+                                                            <%}%>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                            <a type="button" class="btn btn-red" href="/area/bill">Confirm</a>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                
                                             </div>
                                             <%};%>
                                         </div>

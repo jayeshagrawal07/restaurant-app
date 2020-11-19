@@ -111,4 +111,15 @@ router.get("/bill", function (req, res) {
   }
 });
 
+router.get("/paid/:table", function (req, res) {
+  var table = req.params.table;
+  Order.findOneAndDelete({name: table},function(err, order){
+    if(err){
+      console.log(err);
+    }
+  });
+  res.io.emit(`distroy-${table}`,{});
+  res.redirect(`/area/manager`)
+});
+
 module.exports = router;

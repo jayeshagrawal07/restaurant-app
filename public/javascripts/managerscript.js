@@ -256,7 +256,7 @@ var innital = function(){   var toRender = `<div class="row">
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary"
                                                     data-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-red">Paid</button>
+                                                <a type="button" class="btn btn-red" href="/area/paid/<%= checkout.table %>">Paid</a>
                                             </div>
                                         </div>
                                     </div>
@@ -522,7 +522,7 @@ socket.on("bill", function (data) {
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-red">Paid</button>
+                <a type="button" class="btn btn-red" href="/area/paid/<%= data.table %>">Paid</a>
             </div>
         </div>
     </div>

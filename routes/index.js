@@ -135,4 +135,13 @@ router.get('/place/order', function (req, res, next) {
   res.redirect(`/${cart.table}`);
 });
 
+router.get('/distroy/:table', function (req, res, next) {
+  // cart checkout activewala
+  req.session.cart = "";
+  req.session.checkout = false;
+  req.session.activeCategory = "";
+  req.session.save();
+  res.redirect(`/${req.session.table}`)
+});
+
 module.exports = router;
