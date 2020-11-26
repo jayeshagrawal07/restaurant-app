@@ -57,7 +57,7 @@ var innital = function(){   var toRender = `<div class="row">
                             <div class="card-body" style="padding: .5rem;">
                                 <div class="ordered-dish-card">
                                     <div class="cart-dish-title"><%= received[dish].dish.name %> <span
-                                            class="ordered-qty">x<%= received[dish].quantity %></span>
+                                            class="badge badge-dark">x<%= received[dish].quantity %></span>
                                     </div>
                                 </div>
                             </div>
@@ -88,7 +88,7 @@ var innital = function(){   var toRender = `<div class="row">
                                 <div class="card-body" style="padding: .5rem;">
                                     <div class="ordered-dish-card">
                                         <div class="cart-dish-title"><%= preparing[dish].dish.name %> <span
-                                                class="ordered-qty">x<%= preparing[dish].quantity %></span>
+                                                class="badge badge-dark">x<%= preparing[dish].quantity %></span>
                                         </div>
                                     </div>
                                 </div>
@@ -118,7 +118,7 @@ var innital = function(){   var toRender = `<div class="row">
                                     <div class="card-body" style="padding: .5rem;">
                                         <div class="ordered-dish-card">
                                             <div class="cart-dish-title"><%= delivered[dish].dish.name %> <span
-                                                    class="ordered-qty">x<%= delivered[dish].quantity %></span>
+                                                    class="badge badge-dark">x<%= delivered[dish].quantity %></span>
                                             </div>
                                         </div>
                                     </div>
@@ -256,6 +256,7 @@ var innital = function(){   var toRender = `<div class="row">
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary"
                                                     data-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-info" onClick="window.print()">Print</button>
                                                 <a type="button" class="btn btn-red" href="/area/paid/<%= checkout.table %>">Paid</a>
                                             </div>
                                         </div>
@@ -290,7 +291,7 @@ socket.on("order", function (data) {
             <div class="card-body" style="padding: .5rem;">
                 <div class="ordered-dish-card">
                     <div class="cart-dish-title"><%= data.received[dish].dish.name %> <span
-                        class="ordered-qty">x<%= data.received[dish].quantity %></span>
+                        class="badge badge-dark">x<%= data.received[dish].quantity %></span>
                 </div>
                 </div>
             </div>
@@ -361,7 +362,7 @@ socket.on("newOrder", function (data) {
                     <div class="card-body" style="padding: .5rem;">
                         <div class="ordered-dish-card">
                             <div class="cart-dish-title"><%= data.received[dish].dish.name %> <span
-                                class="ordered-qty">x<%= data.received[dish].quantity %></span>
+                                class="badge badge-dark">x<%= data.received[dish].quantity %></span>
                         </div>
                         </div>
                     </div>
@@ -522,6 +523,7 @@ socket.on("bill", function (data) {
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-info" onClick="window.print()">Print</button>
                 <a type="button" class="btn btn-red" href="/area/paid/<%= data.table %>">Paid</a>
             </div>
         </div>
