@@ -253,8 +253,8 @@
                                         if("<%- clickCategory %>"){
                                             setTimeout(function(){
                                                 document.getElementById("ct-<%- clickCategory %>").click();
-                                                setTimeout(function(){ window.location.hash = "<%- activeCategory.toString() %>"; }, 0);
-                                            }, -1);
+                                                setTimeout(function(){ window.location.hash = "<%- activeCategory.toString() %>"; }, 1);
+                                            }, 1);
                                         }else{
                                             window.location.hash = "<%- activeCategory.toString() %>"
                                         }
