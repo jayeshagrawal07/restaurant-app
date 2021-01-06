@@ -1,0 +1,128 @@
+<%- include('partials/header'); -%>
+    <link rel='stylesheet' type='text/css' href='/stylesheets/bill-style.css' />
+    </head>
+
+    <body style="overflow: auto;">
+        <br>
+        <div class="container">
+            <form action="/area/manager/bill" method="get">
+                <div class="form-group row">
+                    <label for="findByBillNo" class="col-sm-auto col-form-label">Find by Bill No.</label>
+                    <div class="col-sm-auto">
+                        <input type="text" class="form-control" name="billno" id="findByBillNo" aria-describedby="findByBillNo" placeholder="Bill No.">
+                    </div>
+                    <div class="col-sm-auto">
+                        <button type="submit" class="btn btn-red">Submit</button>
+                    </div>
+                </div>
+            </form>
+            <% bills.forEach(bill => { %>
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="divClass" id="page-wrap">
+
+                            <div class="divClass" id="header">BILL</div>
+
+                            <div class="divClass" id="identity">
+
+                                <div class="divClass" id="address">Chris Coyier 123 Appleseed Street Appleville, WI 53719
+                                    <br> Phone: (555) 555-5555
+                                </div>
+
+                                <div class="divClass" id="logo">
+                                    <img id="image" src="images/logo.png" alt="logo" />
+                                </div>
+
+                            </div>
+
+                            <div class="divClass" style="clear:both"></div>
+
+                            <div class="divClass" id="customer">
+
+                                <div class="divClass" id="customer-title">
+                                    <%= bill.table %>
+                                </div>
+
+                                <table id="meta">
+                                    <tr>
+                                        <td class="meta-head">Bill #</td>
+                                        <td>
+                                            <div class="divClass">
+                                                <%= bill.billno %>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <% var date = bill.date.toLocaleDateString("en-US", options) %>
+                                            <td class="meta-head">Date</td>
+                                            <td>
+                                                <div class="divClass" id="date">
+                                                    <%= date %>
+                                                </div>
+                                            </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="meta-head">Amount Paid</td>
+                                        <td>
+                                            <div class="divClass" class="due">&#8377;
+                                                <%= bill.amount %>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                </table>
+
+                            </div>
+
+                            <table id="items">
+
+                                <tr>
+                                    <th>Item</th>
+                                    <th>Unit Cost</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                </tr>
+                                <% bill.orders.forEach((dish) => { %>
+                                    <tr class="item-row">
+                                        <td class="item-name">
+                                            <div class="divClass" class="delete-wpr">
+                                                <div class="divClass">
+                                                    <%= dish.dish.name%>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="divClass" class="cost">&#8377;
+                                                <%= dish.dish.price%>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="divClass" class="qty">
+                                                <%= dish.quantity%>
+                                            </div>
+                                        </td>
+                                        <td><span class="price">&#8377;<%= dish.price%></span></td>
+                                    </tr>
+                                    <%});%>
+                                        <tr>
+                                            <td colspan="1" class="blank"> </td>
+                                            <td colspan="2" class="total-line balance">Total</td>
+                                            <td class="total-value balance">
+                                                <div class="divClass" class="due">&#8377;
+                                                    <%= bill.amount %>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                            </table>
+
+                            <div class="divClass" id="terms">
+                                <div class="divClass">Thank You For Your Visit<br>Have a Nice Day</div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <% }) %>
+        </div>
+        <%- include('partials/footer'); -%>
